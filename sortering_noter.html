@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <button data-sort="navn" class="sort">Alfabetisk</button>
+    <button data-sort="kategori" class="sort">Kategori</button>
+    <button data-sort="dato" class="sort">Efter årstal</button>
+
+
+    <script>
+        //første funktion der kaldes efter at DDOM er loaded
+        function start() {
+            const sortKnapper = document.querySelector(".sort");
+
+            document.querySelectorAll(".sort");
+            sortKnapper.forEach(knap => .addEventListener("click"), sorterPersoner));
+
+        loadData();
+        }
+
+        //funktion som sorterer personer
+        sorterPersoner() {
+
+            /*
+
+            //sorterer efter efter tal:
+            personer.feed.entry.sort((a, b) => {
+                return (a.gsx$dato.$t - b.gsx$dato.$t); //en funktion som returnerer a-b
+            }); //personer er navnet på det aray som skal sorteres
+
+            //sorterer efter navn:
+            personer.feed.entry.sort((a, b) => {
+                return (a.gsx$navn.$t.localeCompare(b.gsx$navn.$t)); //en funktion som returnerer a-b
+            }); //personer er navnet på det aray som skal sorteres
+
+            */
+
+            //funktion som kan sorterer efter begge dele:
+            personer.feed.entry.sort((a, b) => {
+                if (this.dataset.sort == "dato") {
+                    return (a.gsx$dato.$t - b.gsx$dato.$t);
+                }
+                if (this.dataset.sort == "navn") {
+                    return (a.gsx$navn.$t.localeCompare(b.gsx$navn.$t));
+                }
+            });
+
+            vis();
+        }
+
+        //Note: Hvis man vil filterer på flere ting på en gang, skal man i if sætningen under funktion vis() indssætte mere info ved at indsætte en ekstra selector || person.gsx$hold.$t == filter || person.gsx$køn.$t == filter ... osv.
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+<script>
+
+
+
+
+</script>

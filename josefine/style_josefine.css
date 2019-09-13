@@ -1,0 +1,587 @@
+/*------------------------------------*\
+****************************************
+
+
+INDHOLDSFORTEGNELSE:
+********************
+
+1: VARIABLER
+2. LAYOUT
+3. TYPOGRAFI
+4. HEADER
+5. FOOTER
+6. KNAPPER
+7. STYLING AF SPECIFIKKE SIDER
+    7.1 FORSIDE
+    7.2 Single/"Detalje"
+8. MEDIA QUERIES
+
+
+****************************************
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+1: VARIABLER
+\*------------------------------------*/
+
+:root {
+    --colorOne: #1a1a1a;
+    --colorTwo: rgb(0, 132, 137);
+    --colorThree: #1a1a1a;
+    --colorFour: rgb(244, 242, 239);
+    --colorFive: #1a1a1a;
+    --colorSix: #1a1a1a;
+
+}
+
+/*------------------------------------*\
+1. VARIABLER - SLUT
+\*------------------------------------*/
+
+
+
+
+/*------------------------------------*\
+2. LAYOUT
+\*------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+
+}
+
+
+/*------------------------------------*\
+2. LAYOUT - SLUT
+\*------------------------------------*/
+
+/*------------------------------------*\
+3. TYPOGRAFI
+\*------------------------------------*/
+
+/* @font-face */
+@font-face {
+    font-family: 'Sporting Grotesque_Bold';
+    src: url('fonts/Sporting_Grotesque/Sporting_Grotesque-Bold_web.woff2') format('woff2'),
+        url('fonts/Sporting_Grotesque/Sporting_Grotesque-Bold_web.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Inter', Helvetica, Arial, Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/Inter/Inter-Regular.woff2') format('woff2'),
+        url('fonts/Inter/Inter-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inter', Helvetica, Arial, Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    src: url("fonts/Inter/Inter-SemiBold.woff2") format("woff2"),
+        url("fonts/Inter/Inter-SemiBold.woff") format("woff");
+}
+
+
+@font-face {
+    font-family: 'kontrapunkt_mikiregular';
+    src: url('fonts/kontrapunkt_miki/kontrapunktmiki-regular-webfont.woff2') format('woff2'),
+        url('fonts/kontrapunkt_miki/kontrapunktmiki-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'kontrapunkt_mikibold';
+    src: url('fonts/kontrapunkt_miki/kontrapunktmiki-bold-webfont.woff2') format('woff2'),
+        url('fonts/kontrapunkt_miki/kontrapunktmiki-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'kontrapunkt_mikiextrabold';
+    src: url('fonts/kontrapunkt_miki/kontrapunktmiki-extrabold-webfont.woff2') format('woff2'),
+        url('fonts/kontrapunkt_miki/kontrapunktmiki-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* @font-face Slut */
+
+h1 {
+    font-family: "kontrapunkt_mikibold";
+    color: var(--colorTwo);
+    font-weight: 800;
+    font-size: calc(2rem + 2vw);
+
+}
+
+.topnav p,
+h2,
+h3 {
+    font-family: "kontrapunkt_mikibold";
+    font-weight: 800;
+    padding: 1rem;
+}
+
+p,
+button {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 1rem;
+
+}
+
+button {
+    margin: 1rem;
+    display: block;
+    background-color: white;
+    border-color: var(--colorTwo);
+    color: var(--colorTwo);
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+h2,
+h3 {
+    line-height: 1.2;
+    padding: 2rem 0;
+}
+
+h4 {
+    font-family: 'kontrapunkt_mikiregular';
+
+
+}
+
+
+article p {
+    padding: 2rem 0;
+}
+
+.popup-content h2,
+.popup-content h3,
+.popup-content p {
+    padding: 0.5rem 0;
+}
+
+.opskrift_data {
+    padding-bottom: 4rem;
+}
+
+p.byline {
+    font-family: 'kontrapunkt_mikibold';
+
+}
+
+p.dato {
+    color: var(--colorTwo);
+
+}
+
+p.lang {
+    padding-top: 2rem;
+}
+
+/*------------------------------------*\
+3. TYPOGRAFI - SLUT
+\*------------------------------------*/
+
+/*------------------------------------*\
+4. HEADER
+\*------------------------------------*/
+
+/* Styling af link i navigations bar */
+a.hjem {
+    color: var(--colorTwo);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/*------------------------------------*\
+4. HEADER - SLUT
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+5. FOOTER
+\*------------------------------------*/
+
+footer {
+    background: var(--colorTwo);
+    color: white;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+footer section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.github_link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.social_links {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.social_links .fa {
+    font-size: 24px;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+
+}
+
+/*------------------------------------*\
+5. FOOTER - SLUT
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+6. KNAPPER
+\*------------------------------------*/
+
+/* Knap: Tilbage til toppen */
+.tilbage {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top_link {
+    display: block;
+    padding: 1rem;
+    margin-left: auto;
+}
+
+.top_link a {
+    padding: 1rem 0;
+    margin-left: auto;
+    text-decoration: none;
+    color: var(--colorTwo);
+}
+
+.top_link h4 {
+    font-family: "kontrapunkt_mikibold";
+}
+
+/*
+.top_link h4:hover,
+.top_link h4:focus {
+}
+*/
+
+/* Knap: Tilbage til toppen SLUT*/
+/*------------------------------------*\
+6. KNAPPER - SLUT
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+7. STYLING AF SPECIFIKKE SIDER
+\*------------------------------------*/
+
+/*------------------------------------*\
+7.1 FORSIDE
+\*------------------------------------*/
+
+/*------------------------------------*\
+7.1 FORSIDE - SLUT
+\*------------------------------------*/
+
+
+
+
+/*------------------------------------*\
+7.2 Single/"Detalje"
+\*------------------------------------*/
+
+#detalje h3,
+#detalje article p {
+    padding: 0.5rem 1rem;
+}
+
+#detalje h2,
+#detalje h3,
+#detalje p {
+    padding: 1rem 0;
+}
+
+p.lang,
+p.ingredienser,
+p.opskrift {
+    padding-top: 2rem;
+}
+
+.personer {
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.kategori {
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+#inddeling {
+    margin: 2.5rem;
+    text-align: center;
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#detalje img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+
+#detalje {
+    top: 0;
+    left: 0;
+    /*    width: 100vw;*/
+    /*    height: 100vh;*/
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+#detalje .cirkel {
+    border-radius: 100%;
+    margin: 10px;
+    background-color: var(--colorTwo);
+    width: 2.5rem;
+    height: 2.5rem;
+
+}
+
+#detalje button {
+    color: var(--colorFour);
+
+
+}
+
+
+
+#detalje .luk {
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+
+}
+
+.single-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+
+    background: ;
+    overflow: auto;
+    max-width: 800px;
+    padding: 2rem;
+    margin: auto;
+
+}
+
+.single-content h3 {}
+
+.single-content .cirkel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.single-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    padding-bottom: 1rem;
+}
+
+
+#menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    margin: 1rem;
+}
+
+
+#menu-container article {
+    cursor: pointer;
+}
+
+#detalje article {
+    padding: 1rem 2rem;
+
+}
+
+/*------------------------------------*\
+7.2 Single/"Detalje" - SLUT
+\*------------------------------------*/
+
+
+
+
+/*------------------------------------*\
+7. STYLING AF SPECIFIKKE SIDER  - SLUT
+\*------------------------------------*/
+
+/*------------------------------------*\
+8: MEDIA QUERIES
+\*------------------------------------*/
+
+/*------------------------------------*\
+8: MEDIA QUERIES - SLUT
+\*------------------------------------*/
+
+.pris {
+    font-weight: 700;
+    padding: 0;
+}
+
+#inddeling {
+    margin: 2.5rem;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.site_header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--colorTwo);
+}
+
+.topnav {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.topnav p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    max-width: 1400px;
+    color: white;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+}
+
+main,
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.menukort-header {
+    text-align: center;
+    margin: 5rem;
+}
+
+.valgt {
+    background-color: var(--colorTwo);
+    color: white;
+}
+
+
+
+
+#menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    margin: 1rem;
+}
+
+#menu-container article {
+    cursor: pointer;
+}
+
+article {
+    display: flex;
+    flex-flow: column;
+    padding: 1rem;
+    background: var(--colorFour);
+
+}
