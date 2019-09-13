@@ -147,6 +147,15 @@ h1 {
 
 }
 
+h2 {
+    font-weight: 800;
+    font-size: calc(1.8rem + 0.5vw);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
 .topnav p,
 h2,
 h3 {
@@ -159,7 +168,7 @@ p,
 button {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
     padding: 1rem;
 
 }
@@ -522,6 +531,20 @@ p.opskrift {
 8: MEDIA QUERIES - SLUT
 \*------------------------------------*/
 
+
+@media only screen and (min-width: 600px) {
+
+    h1 {
+        font-size: calc(2.5rem + 2.5vw);
+    }
+
+    h2 {
+        font-size: calc(1.8rem + 1vw);
+
+    }
+
+
+}
 
 
 #inddeling {
