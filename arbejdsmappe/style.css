@@ -28,7 +28,7 @@ INDHOLDSFORTEGNELSE:
 :root {
     --colorOne: #1a1a1a;
     --colorTwo: rgb(0, 132, 137);
-    --colorThree: #1a1a1a;
+    --colorThree: orange;
     --colorFour: rgb(244, 242, 239);
     --colorFive: #1a1a1a;
     --colorSix: #1a1a1a;
@@ -285,6 +285,12 @@ a.github_link {
     cursor: pointer;
 
 }
+
+.social_links .fa:hover {
+    color: var(--colorThree);
+
+}
+
 
 .antal .fa {
     font-size: 24px;

@@ -8,42 +8,42 @@
     <meta name="robots" content="noindex">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    </style>
 </head>
 
 <body>
     <header class="site_header">
         <div class="topnav">
-            <a href="grøntsageriet_single.html" class="hjem">
+            <a href="index.html" class="hjem">
                 <p>Grøntsageriet</p>
             </a>
         </div>
     </header>
-
     <main>
-        <header class="menukort-header">
-            <h1>Grøntsageriet</h1>
-            <h3>Et vegansk mad univers</h3>
-        </header>
+        <section id="detalje">
+            <article class="single-content">
+                <header class="single-header">
+                    <h2></h2>
+                    <div class="cirkel"><button class="luk">X</button></div>
+                </header>
+                <img src="" alt="">
+                <div class="opskrift_data">
+                    <p class="dato"></p>
+                    <p class="byline"></p>
+                </div>
 
-        <div class="menu">
-            <nav>
-                <button class="filter valgt" data-ret="alle">Alle Retter</button>
-                <button class="filter" data-ret="forretter">Forretter</button>
-                <button class="filter" data-ret="hovedretter">Hovedretter</button>
-                <button class="filter" data-ret="desserter">Desserter</button>
-                <button class="filter" data-ret="drikkevarer">Drikkevarer</button>
-            </nav>
-        </div>
-        <h2 id="inddeling" data-overskrift>Alle Retter</h2>
-        <section id="menu-container" data-container></section>
+                <p class="lang"></p>
+                <p class="ingredienser"></p>
+                <p class="opskrift"></p>
+                <div class="antal">
+                    <i class="fa fa-users"></i>
+                    <p class="personer"></p>
+                </div>
 
-        <div class="tilbage">
-            <div class="top_link">
-                <a href="#">
-                    <h4>Tilbage til toppen &#8593;</h4>
-                </a>
-            </div>
-        </div>
+            </article>
+        </section>
     </main>
     <footer>
         <div class="social_links">
@@ -57,67 +57,60 @@
             </a>
         </div>
     </footer>
-    <template>
-        <article class="ret">
-            <img src="" alt="" class="profil-billede">
-            <div class="antal">>
-                <i class="fa fa-users"></i>
-                <p class="personer"></p>
-            </div>
-
-            <h2 class="navn"></h2>
-            <p class="kort"></p>
-            <p class="pris"></p>
-        </article>
-    </template>
     <script>
-        document.addEventListener("DOMContentLoaded", start);
-        const url = `https://spreadsheets.google.com/feeds/list/1w0KfqkwXMfSVEFIfUSZEEWg6rktwej2XLRq3J4lhHFo/od6/public/values?alt=json`;
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+        console.log(id);
+
+
         let retter;
-        let filter = "alle";
+        const url = `https://spreadsheets.google.com/feeds/list/1w0KfqkwXMfSVEFIfUSZEEWg6rktwej2XLRq3J4lhHFo/od6/public/values?alt=json`;
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+
+
         // første funktion der kaldes efter DOM er loaded
         function start() {
-            const filterKnapper = document.querySelectorAll("nav button");
-            filterKnapper.forEach(knap => knap.addEventListener("click", filtreringRetter));
+            console.log(start);
             loadData();
-        }
-        // funktion der filtrerer retter (json)
-        function filtreringRetter() {
-            filter = this.dataset.ret; // sæt variabel "filter" til aktuel værdi
-            document.querySelector(".valgt").classList.remove("valgt"); // fjern klassen valgt fra aktuel knap
-            this.classList.add("valgt") // marker den nyvalgte knap
 
-            document.querySelector("#inddeling").textContent = this.textContent;
-
-            vis(); // kald funktionen vis igen med nyt filter
+            document.querySelector(".luk").addEventListener("click", () => {
+                history.back();
+            });
         }
+
+
         // funktion der henter data fra Google sheet (via url)
         async function loadData() {
+            console.log(loadData);
             const response = await fetch(url);
             retter = await response.json();
             vis();
         }
-        //funktion der viser retter i liste view
+        //funktion der viser personer i liste view
         function vis() {
-            const dest = document.querySelector("#menu-container"); // container til articles med en ret
-            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
-            dest.textContent = "";
-            retter.feed.entry.forEach(ret => { // loop igennem json (retter)
-                if (ret.gsx$kategori.$t == filter || filter == "alle") { // tjek hvilket køn personen har og sammenlign med filter eller vis alle
-                    const klon = skabelon.cloneNode(true);
-                    klon.querySelector(".navn").textContent = ret.gsx$navn.$t;
-                    klon.querySelector(".profil-billede").src = ret.gsx$billede.$t;
-                    klon.querySelector("img").alt = ret.gsx$navn.$t;
-                    //                    klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
-                    klon.querySelector(".pris").textContent = `${ret.gsx$kategori.$t}`;
+            console.log(vis);
 
-                    klon.querySelector(".ret").addEventListener("click", () => {
+            retter.feed.entry.forEach((ret) => { // loop igennem json (personer)
+                if (ret.gsx$id.$t == id) { // tjek hvilket github personen har og sammenlign med github
+                    //
 
-                        location.href = `grøntsageriet_single.html?id=${ret.gsx$id.$t}`;
+                    document.querySelector("#detalje").style.display = "block";
+                    document.querySelector("#detalje h2").textContent = ret.gsx$navn.$t;
+                    document.querySelector("#detalje img").src = ret.gsx$billede.$t;
+                    document.querySelector("#detalje img").alt = ret.gsx$navn.$t;
+                    document.querySelector(".lang").textContent = ret.gsx$tekst.$t;
+                    document.querySelector(".ingredienser").textContent = `Ingredienser: ${ret.gsx$ingredienser.$t}`;
+                    document.querySelector(".opskrift").textContent = `Opskrift: ${ret.gsx$opskrift.$t}`;
+                    document.querySelector(".dato").textContent = ret.gsx$dato.$t;
+                    document.querySelector(".byline").textContent = ret.gsx$forfatter.$t;
 
-                    });
+                    document.querySelector(".opskrift").textContent = `Opskrift: ${ret.gsx$opskrift.$t}`;
+                    document.querySelector("#detalje .personer").textContent = `Antal Personer: ${ret.gsx$personer.$t}`;
+                    document.querySelector("#detalje h2").textContent = ret.gsx$navn.$t;
 
-                    dest.appendChild(klon);
                 }
             })
         }
