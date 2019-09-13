@@ -286,6 +286,14 @@ a.github_link {
 
 }
 
+.antal .fa {
+    font-size: 24px;
+    color: var(--colorTwo);
+    padding: 1rem;
+
+
+}
+
 /*------------------------------------*\
 5. FOOTER - SLUT
 \*------------------------------------*/
