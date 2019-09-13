@@ -234,6 +234,27 @@ p.lang {
 4. HEADER
 \*------------------------------------*/
 
+.site_header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--colorTwo);
+}
+
+.topnav {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.topnav p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    max-width: 1400px;
+    color: white;
+}
+
+
+
 /* Styling af link i navigations bar */
 a.hjem {
     color: var(--colorTwo);
@@ -241,7 +262,11 @@ a.hjem {
     cursor: pointer;
 }
 
+a.hjem p:hover,
+a.hjem p:active {
+    color: var(--colorThree);
 
+}
 
 /*------------------------------------*\
 4. HEADER - SLUT
@@ -558,24 +583,8 @@ p.opskrift {
 
 
 
-.site_header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: var(--colorTwo);
-}
 
-.topnav {
-    max-width: 1400px;
-    margin: auto;
-}
 
-.topnav p {
-    font-size: 1.2rem;
-    font-weight: 700;
-    max-width: 1400px;
-    color: white;
-}
 
 nav {
     display: grid;
