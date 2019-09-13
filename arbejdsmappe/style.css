@@ -225,12 +225,14 @@ p.lang {
 4. HEADER
 \*------------------------------------*/
 
-/* Styling af link i min navigations bar */
+/* Styling af link i navigations bar */
 a.hjem {
     color: var(--colorTwo);
     text-decoration: none;
     cursor: pointer;
 }
+
+
 
 /*------------------------------------*\
 4. HEADER - SLUT
@@ -263,6 +265,10 @@ footer div {
     justify-content: center;
 }
 
+a.github_link {
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .social_links {
     display: flex;
