@@ -39,8 +39,19 @@
                 <p class="opskrift"></p>
                 <div class="antal">
                     <i class="fa fa-users"></i>
+                    <i class="fa fa-users"></i>
+                    <i class="fa fa-user"></i>
+                    <i class="fa fa-user-o"></i>
                     <p class="personer"></p>
                 </div>
+
+                <div class="tilberedningstid">
+                    <i class="fa fa-clock-o"></i>
+                    <i class='far fa-clock'></i>
+                    <p class="tid"></p>
+                </div>
+
+
 
             </article>
         </section>
@@ -106,16 +117,13 @@
                     document.querySelector(".opskrift").textContent = `Opskrift: ${ret.gsx$opskrift.$t}`;
                     document.querySelector(".dato").textContent = ret.gsx$dato.$t;
                     document.querySelector(".byline").textContent = ret.gsx$forfatter.$t;
-
-                    document.querySelector(".opskrift").textContent = `Opskrift: ${ret.gsx$opskrift.$t}`;
+                    document.querySelector(".tid").textContent = ret.gsx$tid.$t;
                     document.querySelector("#detalje .personer").textContent = `Antal Personer: ${ret.gsx$personer.$t}`;
+                    document.querySelector(".opskrift").textContent = `Opskrift: ${ret.gsx$opskrift.$t}`;
                     document.querySelector("#detalje h2").textContent = ret.gsx$navn.$t;
 
                 }
             })
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
