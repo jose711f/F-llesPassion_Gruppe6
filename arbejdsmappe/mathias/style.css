@@ -291,7 +291,7 @@ a.github_link {
 
 }
 
-
+.tilberedningstid .fa,
 .antal .fa {
     font-size: 24px;
     color: var(--colorTwo);
@@ -382,10 +382,12 @@ p.opskrift {
     padding-top: 2rem;
 }
 
-.personer {
-    font-weight: 700;
+.personer,
+.tid {
+    font-weight: 400;
     padding: 0;
     margin-bottom: 1rem;
+    color: var(--colorTwo);
 }
 
 .kategori {
@@ -520,10 +522,7 @@ p.opskrift {
 8: MEDIA QUERIES - SLUT
 \*------------------------------------*/
 
-.pris {
-    font-weight: 700;
-    padding: 0;
-}
+
 
 #inddeling {
     margin: 2.5rem;

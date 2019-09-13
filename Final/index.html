@@ -60,14 +60,19 @@
     <template>
         <article class="ret">
             <img src="" alt="" class="profil-billede">
+            <h3 class="navn"></h3>
             <div class="antal">
                 <i class="fa fa-users"></i>
+                <i class="fa fa-user"></i>
+                <i class="fa fa-user-o"></i>
                 <p class="personer"></p>
             </div>
-
-            <h2 class="navn"></h2>
+            <div class="tilberedningstid">
+                <i class="fa fa-clock-o"></i>
+                <i class='far fa-clock'></i>
+                <p class="tid"></p>
+            </div>
             <p class="kort"></p>
-            <p class="pris"></p>
         </article>
     </template>
     <script>
@@ -109,8 +114,8 @@
                     klon.querySelector(".profil-billede").src = ret.gsx$billede.$t;
                     klon.querySelector("img").alt = ret.gsx$navn.$t;
                     //                    klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
-                    klon.querySelector(".pris").textContent = `${ret.gsx$kategori.$t}`;
-
+                    klon.querySelector(".tid").textContent = `Tid: ${ret.gsx$tid.$t}`;
+                    klon.querySelector(".personer").textContent = `Antal Personer: ${ret.gsx$personer.$t}`;
                     klon.querySelector(".ret").addEventListener("click", () => {
 
                         location.href = `grøntsageriet_singleview.html?id=${ret.gsx$id.$t}`;
