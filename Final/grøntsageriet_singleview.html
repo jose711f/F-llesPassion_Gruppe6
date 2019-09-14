@@ -27,28 +27,38 @@
                 <header class="single-header">
                     <h2></h2>
                     <button class="luk_pil">&#8592;</button>
-                    <div class="cirkel"><button class="luk">X</button></div>
+                    <!--                    <div class="cirkel"><button class="luk">X</button></div>-->
                 </header>
                 <img src="" alt="">
                 <div class="opskrift_data">
-                    <p class="dato"></p>
                     <p class="byline"></p>
+                    <p class="dato"></p>
                 </div>
-                <div class="antal">
-                    <i class="fa fa-users"></i>
-                    <i class="fa fa-user"></i>
-                    <i class="fa fa-user-o"></i>
-                    <p class="personer"></p>
-                </div>
-                <div class="tilberedningstid">
-                    <i class="fa fa-clock-o"></i>
-                    <i class='far fa-clock'></i>
-                    <p class="tid"></p>
+                <div class="tid_antal">
+                    <div class="antal">
+                        <i class="fa fa-users"></i>
+                        <i class="fa fa-user"></i>
+                        <i class="fa fa-user-o"></i>
+                        <p class="personer"></p>
+                    </div>
+                    <div class="tilberedningstid">
+                        <i class="fa fa-clock-o"></i>
+                        <i class='far fa-clock'></i>
+                        <p class="tid"></p>
+                    </div>
                 </div>
 
                 <p class="lang"></p>
-                <p class="ingredienser"></p>
-                <p class="opskrift"></p>
+                <div class="ingrediens-liste">
+                    <p class="fed">Ingredienser:</p>
+                    <p class="ingredienser">
+                    </p>
+
+                </div>
+                <div class="fremgang">
+                    <p class="fed">Fremgangsmåde:</p>
+                    <p class="opskrift"></p>
+                </div>
             </article>
         </section>
     </main>
@@ -83,7 +93,7 @@
             console.log(start);
             loadData();
 
-            document.querySelector(".luk").addEventListener("click", () => {
+            document.querySelector(".luk_pil").addEventListener("click", () => {
                 history.back();
             });
         }
@@ -109,20 +119,17 @@
                     document.querySelector("#detalje img").src = ret.gsx$billede.$t;
                     document.querySelector("#detalje img").alt = ret.gsx$navn.$t;
                     document.querySelector(".lang").textContent = ret.gsx$tekst.$t;
-                    document.querySelector(".ingredienser").textContent = `Ingredienser: ${ret.gsx$ingredienser.$t}`;
+                    document.querySelector(".ingredienser").textContent = `${ret.gsx$ingredienser.$t}`;
                     document.querySelector(".opskrift").textContent = `Opskrift: ${ret.gsx$opskrift.$t}`;
                     document.querySelector(".dato").textContent = ret.gsx$dato.$t;
                     document.querySelector(".byline").textContent = ret.gsx$forfatter.$t;
                     document.querySelector(".tid").textContent = ret.gsx$tid.$t;
                     document.querySelector("#detalje .personer").textContent = `Antal Personer: ${ret.gsx$personer.$t}`;
-                    document.querySelector(".opskrift").textContent = `Opskrift: ${ret.gsx$opskrift.$t}`;
+                    document.querySelector(".opskrift").textContent = `${ret.gsx$opskrift.$t}`;
                     document.querySelector("#detalje h2").textContent = ret.gsx$navn.$t;
 
                 }
             })
         }
-
     </script>
-</body>
-
-</html>
+</body></html>

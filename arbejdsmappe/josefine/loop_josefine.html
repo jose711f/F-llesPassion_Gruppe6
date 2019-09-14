@@ -13,7 +13,7 @@
 <body>
     <header class="site_header">
         <div class="topnav">
-            <a href="grøntsageriet_single.html" class="hjem">
+            <a href="index.html" class="hjem">
                 <p>Grøntsageriet</p>
             </a>
         </div>
@@ -22,16 +22,27 @@
     <main>
         <header class="menukort-header">
             <h1>Grøntsageriet</h1>
-            <h3>Et vegansk mad univers</h3>
+            <h3>- Et vegansk mad univers</h3>
         </header>
 
         <div class="menu">
             <nav>
                 <button class="filter valgt" data-ret="alle">Alle Retter</button>
-                <button class="filter" data-ret="forretter">Forretter</button>
-                <button class="filter" data-ret="hovedretter">Hovedretter</button>
-                <button class="filter" data-ret="desserter">Desserter</button>
+                <button class="filter" data-ret="Forret">Forretter</button>
+                <button class="filter" data-ret="Aftensmad">Aftensmad</button>
+                <button class="filter" data-ret="Dessert">Desserter</button>
             </nav>
+
+            <!-------anne-sofie har tilføjet---------->
+            <div class="sortering">
+                <p>Sorter efter:</p>
+                <button data-sort="navn" class="sort">Navn</button>
+                <button data-sort="forfatter" class="sort">Forfatter</button>
+                <button data-sort="dato2" class="sort">Dato</button>
+            </div>
+
+            <!-------anne-Sofie tilføjelse slut-------->
+
         </div>
         <h2 id="inddeling" data-overskrift>Alle Retter</h2>
         <section id="menu-container" data-container></section>
@@ -39,7 +50,7 @@
         <div class="tilbage">
             <div class="top_link">
                 <a href="#">
-                    <h4>Tilbage til toppen &#8593;</h4>
+                    <h4>Tilbage til toppen <span class="up">&#8593;</span></h4>
                 </a>
             </div>
         </div>
@@ -59,62 +70,20 @@
     <template>
         <article class="ret">
             <img src="" alt="" class="profil-billede">
-
-            <h2 class="navn"></h2>
+            <h3 class="navn"></h3>
+            <div class="antal">
+                <i class="fa fa-users"></i>
+                <i class="fa fa-user"></i>
+                <i class="fa fa-user-o"></i>
+                <p class="personer"></p>
+            </div>
+            <div class="tilberedningstid">
+                <i class="fa fa-clock-o"></i>
+                <i class='far fa-clock'></i>
+                <p class="tid"></p>
+            </div>
             <p class="kort"></p>
-            <p class="pris"></p>
         </article>
     </template>
-    <script>
-        document.addEventListener("DOMContentLoaded", start);
-        const url = `https://spreadsheets.google.com/feeds/list/1w0KfqkwXMfSVEFIfUSZEEWg6rktwej2XLRq3J4lhHFo/od6/public/values?alt=json`;
-        let retter;
-        let filter = "alle";
-        // første funktion der kaldes efter DOM er loaded
-        function start() {
-            const filterKnapper = document.querySelectorAll("nav button");
-            filterKnapper.forEach(knap => knap.addEventListener("click", filtreringRetter));
-            loadData();
-        }
-        // funktion der filtrerer retter (json)
-        function filtreringRetter() {
-            filter = this.dataset.ret; // sæt variabel "filter" til aktuel værdi
-            document.querySelector(".valgt").classList.remove("valgt"); // fjern klassen valgt fra aktuel knap
-            this.classList.add("valgt") // marker den nyvalgte knap
-
-            document.querySelector("#inddeling").textContent = this.textContent;
-
-            vis(); // kald funktionen vis igen med nyt filter
-        }
-        // funktion der henter data fra Google sheet (via url)
-        async function loadData() {
-            const response = await fetch(url);
-            retter = await response.json();
-            vis();
-        }
-        //funktion der viser retter i liste view
-        function vis() {
-            const dest = document.querySelector("#menu-container"); // container til articles med en ret
-            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
-            dest.textContent = "";
-            retter.feed.entry.forEach(ret => { // loop igennem json (retter)
-                if (ret.gsx$kategori.$t == filter || filter == "alle") { // tjek hvilket køn personen har og sammenlign med filter eller vis alle
-                    const klon = skabelon.cloneNode(true);
-                    klon.querySelector(".navn").textContent = ret.gsx$navn.$t;
-                    klon.querySelector(".profil-billede").src = ret.gsx$billede.$t;
-                    klon.querySelector("img").alt = ret.gsx$navn.$t;
-                    //                    klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
-                    klon.querySelector(".pris").textContent = `${ret.gsx$kategori.$t}`;
-
-                    klon.querySelector(".ret").addEventListener("click", () => {
-
-                        location.href = `single_josefine.html?id=${ret.gsx$id.$t}`;
-
-                    });
-
-                    dest.appendChild(klon);
-                }
-            })
-        }
-    </script>
+    <script src="script_josefine.js"> </script>
 </body></html>
