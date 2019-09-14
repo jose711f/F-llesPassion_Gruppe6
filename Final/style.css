@@ -223,7 +223,7 @@ p.byline {
 }
 
 p.dato {
-    color: var(--colorTwo);
+    color: var(--colorOne);
 
 }
 
@@ -435,19 +435,28 @@ a.github_link {
 
 #detalje h3,
 #detalje article p {
-    padding: 0.5rem 1rem;
+    padding: 0;
 }
 
 #detalje h2,
 #detalje h3,
 #detalje p {
-    padding: 1rem 0;
+    padding: 0;
 }
 
-p.lang,
-p.ingredienser,
-p.opskrift {
-    padding-top: 2rem;
+#detalje article p.lang,
+#detalje article p.ingredienser,
+#detalje article p.opskrift {
+    padding: 0px 0px 20px;
+    font-family: 'kontrapunkt_mikiregular';
+}
+
+#detalje article p.lang {
+    font-family: 'kontrapunkt_mikibold';
+}
+
+#detalje article p.fed {
+    font-family: 'kontrapunkt_mikibold';
 }
 
 .personer,
@@ -496,21 +505,19 @@ p.opskrift {
     padding: 3rem;
 }
 
+/*
 #detalje .cirkel {
     border-radius: 100%;
     margin: 10px;
     background-color: var(--colorTwo);
     width: 2.5rem;
     height: 2.5rem;
-
 }
+*/
 
 #detalje button {
     color: var(--colorFour);
-
-
 }
-
 
 
 #detalje .luk {
@@ -518,7 +525,6 @@ p.opskrift {
     font-weight: 700;
     background-color: transparent;
     border: none;
-
 }
 
 #detalje .luk:hover,
@@ -598,6 +604,28 @@ p.opskrift {
 #detalje article {
     padding: 1rem 2rem;
 
+}
+
+.single-content .opskrift_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 0 10px;
+
+}
+
+.single-content .tid_antal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.single-content .fremgang {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /*------------------------------------*\
