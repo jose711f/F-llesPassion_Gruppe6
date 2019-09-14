@@ -84,14 +84,6 @@ img {
 \*------------------------------------*/
 
 /* @font-face */
-@font-face {
-    font-family: 'Sporting Grotesque_Bold';
-    src: url('fonts/Sporting_Grotesque/Sporting_Grotesque-Bold_web.woff2') format('woff2'),
-        url('fonts/Sporting_Grotesque/Sporting_Grotesque-Bold_web.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 @font-face {
     font-family: 'Inter', Helvetica, Arial, Roboto, sans-serif;
@@ -137,10 +129,23 @@ img {
 
 }
 
+@font-face {
+    font-family: "Recursive";
+    font-weight: 300 900;
+    src: url("fonts/recursive/recursive-prop_xprn_weight_slnt_ital--2019_09_05.woff2");
+}
+
+@font-face {
+    font-family: "recursive-subset";
+    font-weight: 300 900;
+    src: url("fonts/recursive/recursive-prop_xprn_weight_slnt_ital--2019_09_05--subset-0020_007F.woff2");
+}
+
 /* @font-face Slut */
 
 h1 {
-    font-family: "kontrapunkt_mikibold";
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
     color: var(--colorTwo);
     font-weight: 800;
     font-size: calc(2rem + 2vw);
@@ -179,10 +184,10 @@ button {
     background-color: white;
     border-color: var(--colorTwo);
     color: var(--colorTwo);
-    cursor: pointer;
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.25s;
 }
 
 h2,
@@ -260,6 +265,7 @@ a.hjem {
     color: var(--colorTwo);
     text-decoration: none;
     cursor: pointer;
+    transition: 0.25s;
 }
 
 a.hjem p:hover,
@@ -365,7 +371,13 @@ a.github_link {
 }
 
 .top_link h4 {
-    font-family: "kontrapunkt_mikibold";
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
+}
+
+.top_link h4:hover,
+.top_link h4:focus {
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
 }
 
 /*
@@ -495,6 +507,8 @@ p.opskrift {
 
 }
 
+
+
 #detalje .luk {
     font-size: 1rem;
     font-weight: 700;
@@ -508,6 +522,27 @@ p.opskrift {
     color: var(--colorThree);
 
 }
+
+
+#detalje .luk_pil {
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: var(--colorTwo);
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
+
+
+}
+
+#detalje .luk_pil:hover,
+#detalje .luk_pil:active {
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
+    color: var(--colorThree);
+
+}
+
 
 .single-content {
     display: flex;
@@ -624,6 +659,35 @@ nav {
 .menukort-header {
     text-align: center;
     margin: 5rem;
+
+}
+
+.menukort-header h1 {}
+
+.menukort-header h3 {
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
+    color: var(--colorThree);
+    font-weight: 800;
+    text-transform: uppercase;
+    animation: anim 5s infinite;
+    transition: 0.25s;
+    transition-delay: 4s;
+
+}
+
+@keyframes anim {
+    0% {
+        font-variation-settings: "PROP"0, "XPRN"0, "wght"450, "slnt"0, "ital"0;
+    }
+
+    50% {
+        font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
+    }
+
+    100% {
+        font-variation-settings: "PROP"0, "XPRN"0, "wght"450, "slnt"0, "ital"0;
+    }
 }
 
 .valgt {
