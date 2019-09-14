@@ -363,6 +363,24 @@ a.github_link {
 7.1 FORSIDE
 \*------------------------------------*/
 
+/*------------------tiføjes af Anne-Sofie------------*/
+.sortering {
+    display: flex;
+}
+
+.sortering button {
+    border-style: none;
+    padding: 0px;
+    font-weight: 100;
+    margin-right: 0px;
+}
+
+.sortering button:hover {
+    color: var(--colorThree);
+}
+
+/*--------------tilføjelse slut----------------*/
+
 /*------------------------------------*\
 7.1 FORSIDE - SLUT
 \*------------------------------------*/
