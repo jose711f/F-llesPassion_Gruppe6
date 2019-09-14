@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", start);
+
 const url = `https://spreadsheets.google.com/feeds/list/1w0KfqkwXMfSVEFIfUSZEEWg6rktwej2XLRq3J4lhHFo/od6/public/values?alt=json`;
 let retter;
 let filter = "alle";
+
 // første funktion der kaldes efter DOM er loaded
 function start() {
+
     //--------------Anne-Sofie har rettet det der selectes fra "nav button" til ".filter" i nedstående linje, da den ellers også vælger sorteringsknapperne------//
     const filterKnapper = document.querySelectorAll(".filter");
     filterKnapper.forEach(knap => knap.addEventListener("click", filtreringRetter));
-
 
     //--------tilføjet af Anne-Sofie-------//
     const sortKnapper = document.querySelectorAll(".sort");
@@ -18,6 +20,14 @@ function start() {
 
     loadData();
 }
+
+// funktion der henter data fra Google sheet (via url)
+async function loadData() {
+    const response = await fetch(url);
+    retter = await response.json();
+    vis();
+}
+
 // funktion der filtrerer retter (json)
 function filtreringRetter() {
     filter = this.dataset.ret; // sæt variabel "filter" til aktuel værdi
@@ -57,12 +67,7 @@ function sorterRetter() {
 //---------------tilføjelse slut---------------//
 
 
-// funktion der henter data fra Google sheet (via url)
-async function loadData() {
-    const response = await fetch(url);
-    retter = await response.json();
-    vis();
-}
+
 //funktion der viser retter i liste view
 function vis() {
     const dest = document.querySelector("#menu-container"); // container til articles med en ret
