@@ -373,20 +373,24 @@ a.github_link {
 .top_link h4 {
     font-family: 'recursive-subset', 'Recursive', sans-serif;
     font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
+
+
 }
 
 .top_link h4:hover,
 .top_link h4:focus {
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
+
+    transition: all 0.25s ease 0s;
+    transform: translateY(-0.1rem);
+
 }
 
-/*
-.top_link h4:hover,
-.top_link h4:focus {
-}
-*/
+
+
 
 /* Knap: Tilbage til toppen SLUT*/
+
 /*------------------------------------*\
 6. KNAPPER - SLUT
 \*------------------------------------*/
@@ -540,6 +544,8 @@ p.opskrift {
 #detalje .luk_pil:active {
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
     color: var(--colorThree);
+    transition: all 0.25s ease 0s;
+    transform: translateX(-0.25em);
 
 }
 
