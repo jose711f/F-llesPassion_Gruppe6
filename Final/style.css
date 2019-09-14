@@ -505,6 +505,12 @@ p.opskrift {
 
 }
 
+#detalje .luk:hover,
+#detalje .luk:active {
+    color: var(--colorThree);
+
+}
+
 .single-content {
     display: flex;
     flex-wrap: nowrap;

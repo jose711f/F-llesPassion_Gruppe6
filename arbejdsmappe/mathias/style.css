@@ -495,13 +495,17 @@ p.opskrift {
 
 }
 
-
-
 #detalje .luk {
     font-size: 1rem;
     font-weight: 700;
     background-color: transparent;
     border: none;
+
+}
+
+#detalje .luk:hover,
+#detalje .luk:active {
+    color: var(--colorThree);
 
 }
 
