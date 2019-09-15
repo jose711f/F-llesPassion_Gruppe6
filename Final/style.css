@@ -390,6 +390,7 @@ a.github_link {
 
 .sortering {
     display: flex;
+    margin-left: 1rem;
 }
 
 .sortering button {
@@ -415,8 +416,9 @@ a.github_link {
     font-size: 1rem;
     padding: 1rem;
     background-color: inherit;
-    margin: 0;
     text-decoration: underline;
+    margin: 0;
+    margin-left: 1rem;
 }
 
 .dropbtn {
@@ -781,6 +783,10 @@ nav a {
 
 #menu-container article {
     cursor: pointer;
+}
+
+#menu-container article h3 {
+    text-align: center;
 }
 
 article {
