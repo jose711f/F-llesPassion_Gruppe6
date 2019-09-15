@@ -249,7 +249,7 @@ article p {
 .logo {
     cursor: pointer;
     max-height: 60px;
-    padding: 0 40px;
+    padding: 0 20px;
 
 }
 
@@ -796,6 +796,7 @@ nav a {
 }
 
 .valgt:hover {
+    background-color: var(--colorTwo);
     color: var(--colorThree);
 }
 
