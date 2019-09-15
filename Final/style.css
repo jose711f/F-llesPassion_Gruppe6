@@ -356,9 +356,6 @@ a.github_link {
 .antal .fa {
     font-size: 24px;
     color: var(--colorTwo);
-    padding: 0.25rem;
-
-
 }
 
 .tilberedningstid,
@@ -432,15 +429,18 @@ a.github_link {
 \*------------------------------------*/
 
 
+/*
 .sortering {
     display: flex;
     margin-left: 1rem;
 }
+*/
 
 .sortering button {
     border-style: none;
-    padding: 0px;
-    margin-right: 0px;
+    padding: 0 1rem;
+    margin-right: 2rem;
+    margin-left: auto;
 }
 
 .sortering button:hover {
@@ -451,6 +451,9 @@ a.github_link {
 .dropdown {
     height: 100%;
     display: block;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 2rem;
 }
 
 .dropbtn {
@@ -485,6 +488,7 @@ a.github_link {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    margin: 2rem 1rem;
 }
 
 .sort {
@@ -504,9 +508,9 @@ a.github_link {
 
 #inddeling {
     margin: 1rem 1rem 0;
-    padding: 1.5rem 0 0;
+    padding: 1rem 0 0;
     text-align: center;
-    border-top: 1px solid var(--colorThree);
+    border-top: 5px solid var(--colorThree);
 }
 
 /*------------------------------------*\
@@ -689,11 +693,6 @@ p.lang {
     margin: 1rem;
 }
 
-
-#menu-container article {
-    cursor: pointer;
-}
-
 #detalje article {
     padding: 1rem 2rem;
 
@@ -856,6 +855,12 @@ nav a {
 #menu-container article {
     cursor: pointer;
 }
+
+#menu-container .tid_antal {
+    padding-top: 1rem;
+}
+
+
 
 #menu-container article h3 {
     text-align: center;
