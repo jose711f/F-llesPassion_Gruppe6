@@ -345,13 +345,29 @@ a.github_link {
 
 }
 
+
+.tid_antal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .tilberedningstid .fa,
 .antal .fa {
     font-size: 24px;
     color: var(--colorTwo);
+    padding: 0.5rem;
+
+
+}
+
+.tilberedningstid,
+.antal {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
-
-
 }
 
 /*------------------------------------*\
@@ -550,6 +566,7 @@ p.lang {
     font-weight: 400;
     padding: 0;
     color: var(--colorTwo);
+    font-size: 0.8rem;
 }
 
 .kategori {
@@ -680,21 +697,20 @@ p.lang {
 
 }
 
+#menu-container img {
+    height: 300px;
+    object-fit: cover;
+}
+
 .single-content .opskrift_data {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-top: 0.5px solid var(--colorTwo);
     border-bottom: 0.5px solid var(--colorTwo);
-    margin: 1rem 0 2rem;
+    margin: 0 0 2rem;
 }
 
-.single-content .tid_antal {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem 0
-}
 
 .single-content .fremgang {
     display: flex;
@@ -816,6 +832,7 @@ nav a {
 
 #menu-container article h3 {
     text-align: center;
+    padding: 2rem 0 0;
 }
 
 article {
