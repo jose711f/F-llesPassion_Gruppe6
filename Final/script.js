@@ -14,8 +14,6 @@ function start() {
 
     sortKnapper.forEach(knap => knap.addEventListener("click", sorterRetter)); //gør filtreringsknapper klikbare
 
-    //--------- tilføjelse slut-----------//
-
     loadData();
 }
 

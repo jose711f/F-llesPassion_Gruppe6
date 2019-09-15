@@ -27,13 +27,17 @@ INDHOLDSFORTEGNELSE:
 
 :root {
     --colorOne: #1a1a1a;
-    --colorTwo: rgb(0, 132, 137);
-    --colorThree: orange;
+    --colorTwo: #006E64;
+    --colorThree: #FFA541;
     --colorFour: rgb(244, 242, 239);
-    --colorFive: #1a1a1a;
+    --colorFive: #E7F5F1;
     --colorSix: #1a1a1a;
 
+
+    /*Grønne farve - tidligere anvendt*/
+    --colorNine: rgb(0, 132, 137);
 }
+
 
 /*------------------------------------*\
 1. VARIABLER - SLUT
@@ -213,24 +217,6 @@ article p {
     padding: 0.5rem 0;
 }
 
-.opskrift_data {
-    padding-bottom: 4rem;
-}
-
-p.byline {
-    font-family: 'kontrapunkt_mikibold';
-
-}
-
-p.dato {
-    color: var(--colorTwo);
-
-}
-
-p.lang {
-    padding-top: 2rem;
-}
-
 /*------------------------------------*\
 3. TYPOGRAFI - SLUT
 \*------------------------------------*/
@@ -373,20 +359,21 @@ a.github_link {
 .top_link h4 {
     font-family: 'recursive-subset', 'Recursive', sans-serif;
     font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
+
+
 }
 
-.top_link h4:hover,
-.top_link h4:focus {
+.top_link h4:hover {
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
+    transform: translateY(-0.1rem);
+
 }
 
-/*
-.top_link h4:hover,
-.top_link h4:focus {
-}
-*/
+
+
 
 /* Knap: Tilbage til toppen SLUT*/
+
 /*------------------------------------*\
 6. KNAPPER - SLUT
 \*------------------------------------*/
@@ -400,15 +387,15 @@ a.github_link {
 7.1 FORSIDE
 \*------------------------------------*/
 
-/*------------------tiføjes af Anne-Sofie------------*/
+
 .sortering {
     display: flex;
+    margin-left: 1rem;
 }
 
 .sortering button {
     border-style: none;
     padding: 0px;
-    font-weight: 100;
     margin-right: 0px;
 }
 
@@ -416,7 +403,66 @@ a.github_link {
     color: var(--colorThree);
 }
 
-/*--------------tilføjelse slut----------------*/
+
+.dropdown {
+    height: 100%;
+    display: block;
+}
+
+.dropbtn {
+    border: none;
+    outline: none;
+    color: var(--colorTwo);
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: inherit;
+    text-decoration: underline;
+    margin: 0;
+    margin-left: 1rem;
+}
+
+.dropbtn {
+    font-weight: 600;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .sortering {
+    display: block;
+}
+
+.sortering {
+    display: none;
+    position: absolute;
+    background-color: var(--colorTwo);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.sort {
+    background-color: transparent;
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    height: 100%;
+    font-weight: 300;
+}
+
+.valgte_retter {
+    margin-top: 6rem;
+}
+
+#inddeling {
+    margin: 1rem 1rem 0;
+    padding: 2rem 0 0;
+    text-align: center;
+    border-top: 1px solid var(--colorThree);
+}
 
 /*------------------------------------*\
 7.1 FORSIDE - SLUT
@@ -431,18 +477,43 @@ a.github_link {
 
 #detalje h3,
 #detalje article p {
-    padding: 0.5rem 1rem;
+    padding: 0;
 }
 
 #detalje h2,
 #detalje h3,
 #detalje p {
-    padding: 1rem 0;
+    padding: 0;
 }
 
-p.lang,
-p.ingredienser,
-p.opskrift {
+#detalje article p.lang,
+#detalje article p.ingredienser,
+#detalje article p.opskrift {
+    padding: 0px 0px 20px;
+    font-family: 'kontrapunkt_mikiregular';
+}
+
+#detalje article p.lang {
+    font-family: 'kontrapunkt_mikibold';
+}
+
+#detalje article p.fed {
+    font-family: 'kontrapunkt_mikibold';
+}
+
+#detalje article p.byline {
+    font-family: 'kontrapunkt_mikibold';
+    padding: 0.5rem 0;
+}
+
+#detalje article p.dato {
+    color: var(--colorOne);
+    font-family: 'kontrapunkt_mikiregular';
+    padding: 0.5rem 0;
+
+}
+
+p.lang {
     padding-top: 2rem;
 }
 
@@ -450,7 +521,6 @@ p.opskrift {
 .tid {
     font-weight: 400;
     padding: 0;
-    margin-bottom: 1rem;
     color: var(--colorTwo);
 }
 
@@ -459,17 +529,6 @@ p.opskrift {
     margin-bottom: 1rem;
 }
 
-#inddeling {
-    margin: 2.5rem;
-    text-align: center;
-}
-
-
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
 
 #detalje img {
     width: 100%;
@@ -492,21 +551,19 @@ p.opskrift {
     padding: 3rem;
 }
 
+/*
 #detalje .cirkel {
     border-radius: 100%;
     margin: 10px;
     background-color: var(--colorTwo);
     width: 2.5rem;
     height: 2.5rem;
-
 }
+*/
 
 #detalje button {
     color: var(--colorFour);
-
-
 }
-
 
 
 #detalje .luk {
@@ -514,7 +571,6 @@ p.opskrift {
     font-weight: 700;
     background-color: transparent;
     border: none;
-
 }
 
 #detalje .luk:hover,
@@ -532,14 +588,16 @@ p.opskrift {
     color: var(--colorTwo);
     font-family: 'recursive-subset', 'Recursive', sans-serif;
     font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
-
-
+    margin: 0;
+    padding: 0;
 }
 
 #detalje .luk_pil:hover,
 #detalje .luk_pil:active {
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
     color: var(--colorThree);
+    transition: all 0.25s ease 0s;
+    transform: translateX(-0.25rem);
 
 }
 
@@ -594,6 +652,28 @@ p.opskrift {
 
 }
 
+.single-content .opskrift_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 0.5px solid var(--colorTwo);
+    border-bottom: 0.5px solid var(--colorTwo);
+    margin: 1rem 0 2rem;
+}
+
+.single-content .tid_antal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0
+}
+
+.single-content .fremgang {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 /*------------------------------------*\
 7.2 Single/"Detalje" - SLUT
 \*------------------------------------*/
@@ -609,11 +689,6 @@ p.opskrift {
 8: MEDIA QUERIES
 \*------------------------------------*/
 
-/*------------------------------------*\
-8: MEDIA QUERIES - SLUT
-\*------------------------------------*/
-
-
 @media only screen and (min-width: 600px) {
 
     h1 {
@@ -624,24 +699,11 @@ p.opskrift {
         font-size: calc(1.8rem + 1vw);
 
     }
-
-
 }
 
-
-#inddeling {
-    margin: 2.5rem;
-    text-align: center;
-}
-
-
-
-
-
-
-
-
-
+/*------------------------------------*\
+8: MEDIA QUERIES - SLUT
+\*------------------------------------*/
 
 nav {
     display: grid;
@@ -655,6 +717,18 @@ nav {
     margin: 0 auto;
 }
 
+nav a {
+    text-decoration: none;
+
+}
+
+.filter {
+    min-width: 150px;
+}
+
+.filter:hover {
+    background-color: var(--colorFive);
+}
 
 .menukort-header {
     text-align: center;
@@ -672,8 +746,6 @@ nav {
     text-transform: uppercase;
     animation: anim 5s infinite;
     transition: 0.25s;
-    transition-delay: 4s;
-
 }
 
 @keyframes anim {
@@ -695,6 +767,10 @@ nav {
     color: white;
 }
 
+.valgt:hover {
+    color: var(--colorThree);
+}
+
 
 
 
@@ -707,6 +783,10 @@ nav {
 
 #menu-container article {
     cursor: pointer;
+}
+
+#menu-container article h3 {
+    text-align: center;
 }
 
 article {
