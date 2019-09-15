@@ -543,6 +543,7 @@ a.github_link {
 
 #detalje article p.fed {
     font-family: 'kontrapunkt_mikibold';
+    color: var(--colorTwo);
 }
 
 #detalje article p.byline {
