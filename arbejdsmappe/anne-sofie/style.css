@@ -27,13 +27,17 @@ INDHOLDSFORTEGNELSE:
 
 :root {
     --colorOne: #1a1a1a;
-    --colorTwo: rgb(0, 132, 137);
-    --colorThree: orange;
+    --colorTwo: #006E64;
+    --colorThree: #FFA541;
     --colorFour: rgb(244, 242, 239);
-    --colorFive: #1a1a1a;
+    --colorFive: #E7F5F1;
     --colorSix: #1a1a1a;
 
+
+    /*Grønne farve - tidligere anvendt*/
+    --colorNine: rgb(0, 132, 137);
 }
+
 
 /*------------------------------------*\
 1. VARIABLER - SLUT
@@ -84,14 +88,6 @@ img {
 \*------------------------------------*/
 
 /* @font-face */
-@font-face {
-    font-family: 'Sporting Grotesque_Bold';
-    src: url('fonts/Sporting_Grotesque/Sporting_Grotesque-Bold_web.woff2') format('woff2'),
-        url('fonts/Sporting_Grotesque/Sporting_Grotesque-Bold_web.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 @font-face {
     font-family: 'Inter', Helvetica, Arial, Roboto, sans-serif;
@@ -137,14 +133,36 @@ img {
 
 }
 
+@font-face {
+    font-family: "Recursive";
+    font-weight: 300 900;
+    src: url("fonts/recursive/recursive-prop_xprn_weight_slnt_ital--2019_09_05.woff2");
+}
+
+@font-face {
+    font-family: "recursive-subset";
+    font-weight: 300 900;
+    src: url("fonts/recursive/recursive-prop_xprn_weight_slnt_ital--2019_09_05--subset-0020_007F.woff2");
+}
+
 /* @font-face Slut */
 
 h1 {
-    font-family: "kontrapunkt_mikibold";
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
     color: var(--colorTwo);
     font-weight: 800;
     font-size: calc(2rem + 2vw);
 
+}
+
+h2 {
+    font-weight: 800;
+    font-size: calc(1.8rem + 0.5vw);
+}
+
+h3 {
+    font-size: 1.5rem;
 }
 
 .topnav p,
@@ -159,7 +177,7 @@ p,
 button {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
     padding: 1rem;
 
 }
@@ -170,10 +188,10 @@ button {
     background-color: white;
     border-color: var(--colorTwo);
     color: var(--colorTwo);
-    cursor: pointer;
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.25s;
 }
 
 h2,
@@ -199,24 +217,6 @@ article p {
     padding: 0.5rem 0;
 }
 
-.opskrift_data {
-    padding-bottom: 4rem;
-}
-
-p.byline {
-    font-family: 'kontrapunkt_mikibold';
-
-}
-
-p.dato {
-    color: var(--colorTwo);
-
-}
-
-p.lang {
-    padding-top: 2rem;
-}
-
 /*------------------------------------*\
 3. TYPOGRAFI - SLUT
 \*------------------------------------*/
@@ -225,14 +225,68 @@ p.lang {
 4. HEADER
 \*------------------------------------*/
 
+.site_header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--colorTwo);
+}
+
+.topnav {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.topnav p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    max-width: 1400px;
+    color: white;
+}
+
+/* logo */
+
+.logo {
+    cursor: pointer;
+    max-height: 60px;
+    padding: 0 20px;
+
+}
+
+header figure {
+    /*    padding: 10px;*/
+    max-width: 60px;
+    /*    margin: 10px 10px;*/
+}
+
+figure {
+    /*    margin: auto 5px;*/
+    padding: 0;
+}
+
+.logo img {
+    padding: 10px;
+}
+
+
+
+
+/* logo - slut */
+
+
 /* Styling af link i navigations bar */
 a.hjem {
     color: var(--colorTwo);
     text-decoration: none;
     cursor: pointer;
+    transition: 0.25s;
 }
 
+a.hjem p:hover,
+a.hjem p:active {
+    color: var(--colorThree);
 
+}
 
 /*------------------------------------*\
 4. HEADER - SLUT
@@ -291,7 +345,7 @@ a.github_link {
 
 }
 
-
+.tilberedningstid .fa,
 .antal .fa {
     font-size: 24px;
     color: var(--colorTwo);
@@ -319,7 +373,7 @@ a.github_link {
 
 .top_link {
     display: block;
-    padding: 1rem;
+    padding: 2rem 1rem;
     margin-left: auto;
 }
 
@@ -331,17 +385,22 @@ a.github_link {
 }
 
 .top_link h4 {
-    font-family: "kontrapunkt_mikibold";
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
+
+
 }
 
-/*
-.top_link h4:hover,
-.top_link h4:focus {
+.top_link h4:hover {
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
+    transform: translateY(-0.1rem);
+
 }
-*/
+
+
+
 
 /* Knap: Tilbage til toppen SLUT*/
-
 
 /*------------------------------------*\
 6. KNAPPER - SLUT
@@ -356,15 +415,15 @@ a.github_link {
 7.1 FORSIDE
 \*------------------------------------*/
 
-/*------------------tiføjes af Anne-Sofie------------*/
+
 .sortering {
     display: flex;
+    margin-left: 1rem;
 }
 
 .sortering button {
     border-style: none;
     padding: 0px;
-    font-weight: 100;
     margin-right: 0px;
 }
 
@@ -372,8 +431,66 @@ a.github_link {
     color: var(--colorThree);
 }
 
-/*--------------tilføjelse slut----------------*/
 
+.dropdown {
+    height: 100%;
+    display: block;
+}
+
+.dropbtn {
+    border: none;
+    outline: none;
+    color: var(--colorTwo);
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: inherit;
+    text-decoration: underline;
+    margin: 0;
+    margin-left: 1rem;
+}
+
+.dropbtn {
+    font-weight: 600;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .sortering {
+    display: block;
+}
+
+.sortering {
+    display: none;
+    position: absolute;
+    background-color: var(--colorTwo);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.sort {
+    background-color: transparent;
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    height: 100%;
+    font-weight: 300;
+}
+
+.valgte_retter {
+    margin-top: 6rem;
+}
+
+#inddeling {
+    margin: 1rem 1rem 0;
+    padding: 2rem 0 0;
+    text-align: center;
+    border-top: 1px solid var(--colorThree);
+}
 
 /*------------------------------------*\
 7.1 FORSIDE - SLUT
@@ -388,25 +505,51 @@ a.github_link {
 
 #detalje h3,
 #detalje article p {
-    padding: 0.5rem 1rem;
+    padding: 0;
 }
 
 #detalje h2,
 #detalje h3,
 #detalje p {
-    padding: 1rem 0;
+    padding: 0;
 }
 
-p.lang,
-p.ingredienser,
-p.opskrift {
+#detalje article p.lang,
+#detalje article p.ingredienser,
+#detalje article p.opskrift {
+    padding: 0px 0px 20px;
+    font-family: 'kontrapunkt_mikiregular';
+}
+
+#detalje article p.lang {
+    font-family: 'kontrapunkt_mikibold';
+}
+
+#detalje article p.fed {
+    font-family: 'kontrapunkt_mikibold';
+}
+
+#detalje article p.byline {
+    font-family: 'kontrapunkt_mikibold';
+    padding: 0.5rem 0;
+}
+
+#detalje article p.dato {
+    color: var(--colorOne);
+    font-family: 'kontrapunkt_mikiregular';
+    padding: 0.5rem 0;
+
+}
+
+p.lang {
     padding-top: 2rem;
 }
 
-.personer {
-    font-weight: 700;
+.personer,
+.tid {
+    font-weight: 400;
     padding: 0;
-    margin-bottom: 1rem;
+    color: var(--colorTwo);
 }
 
 .kategori {
@@ -414,17 +557,6 @@ p.opskrift {
     margin-bottom: 1rem;
 }
 
-#inddeling {
-    margin: 2.5rem;
-    text-align: center;
-}
-
-
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
 
 #detalje img {
     width: 100%;
@@ -447,21 +579,19 @@ p.opskrift {
     padding: 3rem;
 }
 
+/*
 #detalje .cirkel {
     border-radius: 100%;
     margin: 10px;
     background-color: var(--colorTwo);
     width: 2.5rem;
     height: 2.5rem;
-
 }
+*/
 
 #detalje button {
     color: var(--colorFour);
-
-
 }
-
 
 
 #detalje .luk {
@@ -469,8 +599,36 @@ p.opskrift {
     font-weight: 700;
     background-color: transparent;
     border: none;
+}
+
+#detalje .luk:hover,
+#detalje .luk:active {
+    color: var(--colorThree);
 
 }
+
+
+#detalje .luk_pil {
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: var(--colorTwo);
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
+    margin: 0;
+    padding: 0;
+}
+
+#detalje .luk_pil:hover,
+#detalje .luk_pil:active {
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
+    color: var(--colorThree);
+    transition: all 0.25s ease 0s;
+    transform: translateX(-0.25rem);
+
+}
+
 
 .single-content {
     display: flex;
@@ -522,6 +680,28 @@ p.opskrift {
 
 }
 
+.single-content .opskrift_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 0.5px solid var(--colorTwo);
+    border-bottom: 0.5px solid var(--colorTwo);
+    margin: 1rem 0 2rem;
+}
+
+.single-content .tid_antal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0
+}
+
+.single-content .fremgang {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 /*------------------------------------*\
 7.2 Single/"Detalje" - SLUT
 \*------------------------------------*/
@@ -537,44 +717,21 @@ p.opskrift {
 8: MEDIA QUERIES
 \*------------------------------------*/
 
+@media only screen and (min-width: 600px) {
+
+    h1 {
+        font-size: calc(2.5rem + 2.5vw);
+    }
+
+    h2 {
+        font-size: calc(1.8rem + 1vw);
+
+    }
+}
+
 /*------------------------------------*\
 8: MEDIA QUERIES - SLUT
 \*------------------------------------*/
-
-.pris {
-    font-weight: 700;
-    padding: 0;
-}
-
-#inddeling {
-    margin: 2.5rem;
-    text-align: center;
-}
-
-
-
-
-
-
-
-.site_header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: var(--colorTwo);
-}
-
-.topnav {
-    max-width: 1400px;
-    margin: auto;
-}
-
-.topnav p {
-    font-size: 1.2rem;
-    font-weight: 700;
-    max-width: 1400px;
-    color: white;
-}
 
 nav {
     display: grid;
@@ -588,15 +745,59 @@ nav {
     margin: 0 auto;
 }
 
+nav a {
+    text-decoration: none;
+
+}
+
+.filter {
+    min-width: 150px;
+}
+
+.filter:hover {
+    background-color: var(--colorFive);
+}
 
 .menukort-header {
     text-align: center;
     margin: 5rem;
+
+}
+
+.menukort-header h1 {}
+
+.menukort-header h3 {
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
+    color: var(--colorThree);
+    font-weight: 800;
+    text-transform: uppercase;
+    animation: anim 5s infinite;
+    transition: 0.25s;
+}
+
+@keyframes anim {
+    0% {
+        font-variation-settings: "PROP"0, "XPRN"0, "wght"450, "slnt"0, "ital"0;
+    }
+
+    50% {
+        font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
+    }
+
+    100% {
+        font-variation-settings: "PROP"0, "XPRN"0, "wght"450, "slnt"0, "ital"0;
+    }
 }
 
 .valgt {
     background-color: var(--colorTwo);
     color: white;
+}
+
+.valgt:hover {
+    background-color: var(--colorTwo);
+    color: var(--colorThree);
 }
 
 
@@ -611,6 +812,10 @@ nav {
 
 #menu-container article {
     cursor: pointer;
+}
+
+#menu-container article h3 {
+    text-align: center;
 }
 
 article {
