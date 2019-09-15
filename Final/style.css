@@ -580,8 +580,7 @@ p.lang {
     font-family: 'recursive-subset', 'Recursive', sans-serif;
     font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
     margin: 0;
-
-
+    padding: 0;
 }
 
 #detalje .luk_pil:hover,
