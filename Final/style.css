@@ -27,13 +27,17 @@ INDHOLDSFORTEGNELSE:
 
 :root {
     --colorOne: #1a1a1a;
-    --colorTwo: rgb(0, 132, 137);
-    --colorThree: orange;
+    --colorTwo: #006E64;
+    --colorThree: #FFA541;
     --colorFour: rgb(244, 242, 239);
-    --colorFive: #1a1a1a;
+    --colorFive: #E7F5F1;
     --colorSix: #1a1a1a;
 
+
+    /*Grønne farve - tidligere anvendt*/
+    --colorNine: rgb(0, 132, 137);
 }
+
 
 /*------------------------------------*\
 1. VARIABLER - SLUT
@@ -391,7 +395,6 @@ a.github_link {
 .sortering button {
     border-style: none;
     padding: 0px;
-    font-weight: 100;
     margin-right: 0px;
 }
 
@@ -445,6 +448,18 @@ a.github_link {
     display: block;
     text-align: left;
     height: 100%;
+    font-weight: 300;
+}
+
+.valgte_retter {
+    margin-top: 6rem;
+}
+
+#inddeling {
+    margin: 1rem 1rem 0;
+    padding: 2rem 0 0;
+    text-align: center;
+    border-top: 1px solid var(--colorThree);
 }
 
 /*------------------------------------*\
@@ -510,11 +525,6 @@ p.lang {
 .kategori {
     padding: 0;
     margin-bottom: 1rem;
-}
-
-#inddeling {
-    padding: 5rem 1rem 1rem;
-    text-align: center;
 }
 
 
@@ -751,6 +761,10 @@ nav a {
 .valgt {
     background-color: var(--colorTwo);
     color: white;
+}
+
+.valgt:hover {
+    color: var(--colorThree);
 }
 
 
