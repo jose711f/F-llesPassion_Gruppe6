@@ -7,11 +7,9 @@ let filter = "alle";
 // første funktion der kaldes efter DOM er loaded
 function start() {
 
-    //--------------Anne-Sofie har rettet det der selectes fra "nav button" til ".filter" i nedstående linje, da den ellers også vælger sorteringsknapperne------//
     const filterKnapper = document.querySelectorAll(".filter");
     filterKnapper.forEach(knap => knap.addEventListener("click", filtreringRetter));
 
-    //--------tilføjet af Anne-Sofie-------//
     const sortKnapper = document.querySelectorAll(".sort");
 
     sortKnapper.forEach(knap => knap.addEventListener("click", sorterRetter)); //gør filtreringsknapper klikbare
@@ -40,8 +38,6 @@ function filtreringRetter() {
 }
 
 
-//---------------tilføjet af Anne-Sofie--------------//
-
 //funktion som kan sorterer indhold:
 function sorterRetter() {
     console.log("sorter");
@@ -60,6 +56,8 @@ function sorterRetter() {
             return (a.gsx$forfatter.$t.localeCompare(b.gsx$forfatter.$t));
         }
     });
+
+    document.querySelector(".valgt_2 ").textContent = this.textContent;
 
     vis(); //kald funktionen vis med ny sortering
 }
