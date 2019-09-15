@@ -361,8 +361,6 @@ a.github_link {
 
 .top_link h4:hover {
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
-
-    transition: all 0.25s ease 0s;
     transform: translateY(-0.1rem);
 
 }
