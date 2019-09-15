@@ -46,15 +46,16 @@
 
         <div class="valgte_retter">
             <h2 id="inddeling" data-overskrift>Alle Retter</h2>
-        </div>
-        <div class="dropdown">
-            <p class="dropbtn"> <span class="valgt_2">Sorter efter</span> <i class="fa fa-caret-down"></i></p>
-            <div class="sortering">
-                <button data-sort="navn" class="sort">Navn</button>
-                <button data-sort="forfatter" class="sort">Forfatter</button>
-                <button data-sort="dato2" class="sort">Dato</button>
+            <div class="dropdown">
+                <p class="dropbtn"> <span class="valgt_2">Sorter efter</span> <i class="fa fa-caret-down"></i></p>
+                <div class="sortering">
+                    <button data-sort="navn" class="sort">Navn</button>
+                    <button data-sort="forfatter" class="sort">Forfatter</button>
+                    <button data-sort="dato2" class="sort">Dato</button>
+                </div>
             </div>
         </div>
+
         <section id="menu-container" data-container></section>
 
         <div class="tilbage">
@@ -81,18 +82,20 @@
         <article class="ret">
             <img src="" alt="" class="profil-billede">
             <h3 class="navn"></h3>
-            <div class="antal">
-                <!--                <i class="fa fa-users"></i>-->
-                <i class="fa fa-user"></i>
-                <!--                <i class="fa fa-user-o"></i>-->
-                <p class="personer"></p>
+            <div class="tid_antal">
+                <div class="antal">
+                    <!--                        <i class="fa fa-users"></i>-->
+                    <i class="fa fa-user"></i>
+                    <!--                        <i class="fa fa-user-o"></i>-->
+                    <p class="personer"></p>
+                </div>
+                <div class="tilberedningstid">
+                    <i class="fa fa-clock-o"></i>
+                    <!--                        <i class='far fa-clock'></i>-->
+                    <p class="tid"></p>
+                </div>
             </div>
-            <div class="tilberedningstid">
-                <i class="fa fa-clock-o"></i>
-<!--                <i class='far fa-clock'></i>-->
-                <p class="tid"></p>
-            </div>
-            <p class="kort"></p>
+            <!--            <p class="kort"></p>-->
         </article>
     </template>
     <script src="script.js"> </script>
