@@ -213,24 +213,6 @@ article p {
     padding: 0.5rem 0;
 }
 
-.opskrift_data {
-    padding-bottom: 4rem;
-}
-
-p.byline {
-    font-family: 'kontrapunkt_mikibold';
-
-}
-
-p.dato {
-    color: var(--colorOne);
-
-}
-
-p.lang {
-    padding-top: 2rem;
-}
-
 /*------------------------------------*\
 3. TYPOGRAFI - SLUT
 \*------------------------------------*/
@@ -505,11 +487,26 @@ a.github_link {
     font-family: 'kontrapunkt_mikibold';
 }
 
+#detalje article p.byline {
+    font-family: 'kontrapunkt_mikibold';
+    padding: 0.5rem 0;
+}
+
+#detalje article p.dato {
+    color: var(--colorOne);
+    font-family: 'kontrapunkt_mikiregular';
+    padding: 0.5rem 0;
+
+}
+
+p.lang {
+    padding-top: 2rem;
+}
+
 .personer,
 .tid {
     font-weight: 400;
     padding: 0;
-    margin-bottom: 1rem;
     color: var(--colorTwo);
 }
 
@@ -582,6 +579,7 @@ a.github_link {
     color: var(--colorTwo);
     font-family: 'recursive-subset', 'Recursive', sans-serif;
     font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
+    margin: 0;
 
 
 }
@@ -650,16 +648,16 @@ a.github_link {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0;
-    margin: 0 0 10px;
-
+    border-top: 0.5px solid var(--colorTwo);
+    border-bottom: 0.5px solid var(--colorTwo);
+    margin: 1rem 0 2rem;
 }
 
 .single-content .tid_antal {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0;
+    padding: 1rem 0
 }
 
 .single-content .fremgang {
