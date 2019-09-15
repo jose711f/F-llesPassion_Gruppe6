@@ -722,8 +722,10 @@ nav a {
 
 .filter {
     min-width: 150px;
+}
 
-
+.filter:hover {
+    background-color: var(--colorFive);
 }
 
 .menukort-header {
