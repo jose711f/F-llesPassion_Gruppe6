@@ -575,6 +575,7 @@ article p {
 #detalje article p.fed {
     font-family: 'kontrapunkt_mikibold';
     color: var(--colorTwo);
+    text-align: left;
 }
 
 #detalje article p.byline {
