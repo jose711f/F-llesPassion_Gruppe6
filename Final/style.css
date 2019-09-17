@@ -510,6 +510,11 @@ a.github_link {
     margin-top: 4rem;
 }
 
+article p {
+    padding: 0px;
+    text-align: center;
+}
+
 #inddeling {
     margin: 1rem 1rem 0;
     padding: 2rem 0 0;

@@ -60,8 +60,6 @@ function sorterRetter() {
     vis(); //kald funktionen vis med ny sortering
 }
 
-//---------------tilføjelse slut---------------//
-
 
 
 //funktion der viser retter i liste view
@@ -69,15 +67,20 @@ function vis() {
     const dest = document.querySelector("#menu-container"); // container til articles med en ret
     const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
     dest.textContent = "";
+
     retter.feed.entry.forEach(ret => { // loop igennem json (retter)
         if (ret.gsx$kategori.$t == filter || filter == "alle") { // tjek hvilket køn personen har og sammenlign med filter eller vis alle
             const klon = skabelon.cloneNode(true);
             klon.querySelector(".navn").textContent = ret.gsx$navn.$t;
+            klon.querySelector(".forfatter").textContent = ret.gsx$forfatter.$t;
+
             klon.querySelector(".profil-billede").src = ret.gsx$billede.$t;
             klon.querySelector("img").alt = ret.gsx$navn.$t;
             //                    klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
             klon.querySelector(".tid").textContent = `${ret.gsx$tid.$t}`;
             klon.querySelector(".personer").textContent = `${ret.gsx$personer.$t} Personer`;
+
+
             klon.querySelector(".ret").addEventListener("click", () => {
 
                 location.href = `grøntsageriet_singleview.html?id=${ret.gsx$id.$t}`;
