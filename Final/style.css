@@ -640,7 +640,9 @@ p.lang {
 */
 
 #detalje button {
-    color: var(--colorFour);
+    color: var(--colorOne);
+    border: none;
+    background-color: var(--colorFour);
 }
 
 
