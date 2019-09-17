@@ -40,10 +40,10 @@ function filtreringRetter() {
 function sorterRetter() {
     console.log("sorter");
 
-    retter.feed.entry.sort((b, a) => {
+    retter.feed.entry.sort((a, b) => {
         //hvis der er klikket på et knap som har datasettet dato, så sorterer den efter dato med nyeste først
         if (this.dataset.sort == "dato2") {
-            return (a.gsx$dato2.$t - b.gsx$dato2.$t);
+            return (b.gsx$dato2.$t - a.gsx$dato2.$t);
         }
         //hvis der er klikket på et knap som har datasettet navn, så sorterer den efter navn alfabetisk
         if (this.dataset.sort == "navn") {
