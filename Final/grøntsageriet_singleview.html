@@ -124,20 +124,22 @@
                     //
 
                     const ingredienser = ret.gsx$ingredienser.$t;
-                    const ingrediensArray = ingredienser.split(",") //laver et Array af en streng (tekstlinje = tekststreg) - deler indholdet op i array elementer
+                    const ingrediensArray = ingredienser.split("/") //laver et Array af en streng (tekstlinje = tekststreg) - deler indholdet op i array elementer
 
                     document.querySelector("#detalje").style.display = "block";
                     document.querySelector("#detalje h2").textContent = ret.gsx$navn.$t;
                     document.querySelector("#detalje img").src = ret.gsx$billede.$t;
                     document.querySelector("#detalje img").alt = ret.gsx$navn.$t;
                     document.querySelector(".lang").textContent = ret.gsx$tekst.$t;
-                    const ingrediensListe = document.querySelector(".ingredienser");
 
+                    const ingrediensListe = document.querySelector(".ingredienser"); //Vælger ul fra html, hvor ingredienserne skal vises
+
+                    //Hver ingrediens i arrayet laves om til listeelement som vises i ul
                     ingrediensArray.forEach(ingrediens => {
                         console.log(ingrediens);
-                        const nyLi = document.createElement("li"); //nyt listeelement
+                        const nyLi = document.createElement("li"); //laver et nyt listeelement inde i ul.
                         nyLi.textContent = ingrediens;
-                        ingrediensListe.appendChild(nyLi);
+                        ingrediensListe.appendChild(nyLi); //appender alle ingredienserne i listen.
 
                     })
 
@@ -154,8 +156,5 @@
                 }
             })
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
