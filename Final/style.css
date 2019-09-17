@@ -454,6 +454,7 @@ a.github_link {
     display: flex;
     justify-content: flex-end;
     margin: 0 2rem;
+    padding: 1rem 0;
 }
 
 .dropbtn {
@@ -466,7 +467,7 @@ a.github_link {
     text-decoration: underline;
     margin: 0;
     margin-left: 1rem;
-    padding: 0
+    padding: 0;
 }
 
 .dropbtn {
@@ -690,7 +691,7 @@ p.lang {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
-    margin: 1rem;
+    margin: 0 1rem 1rem;
 }
 
 #detalje article {
@@ -764,7 +765,7 @@ p.lang {
     }
 
     .menukort-header {
-        padding: 2.5rem 0;
+        padding: 1.5rem 0;
     }
 }
 
