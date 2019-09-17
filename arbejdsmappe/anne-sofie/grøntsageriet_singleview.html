@@ -124,6 +124,9 @@
                 if (ret.gsx$id.$t == id) { // tjek hvilket github personen har og sammenlign med github
                     //
 
+                    const ingredienser = ret.gsx$ingredienser.$t;
+                    console.log(ingredienser);
+
                     document.querySelector("#detalje").style.display = "block";
                     document.querySelector("#detalje h2").textContent = ret.gsx$navn.$t;
                     document.querySelector("#detalje img").src = ret.gsx$billede.$t;
@@ -141,8 +144,5 @@
                 }
             })
         }
-
     </script>
-</body>
-
-</html>
+</body></html>

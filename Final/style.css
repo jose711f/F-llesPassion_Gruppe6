@@ -250,7 +250,6 @@ article p {
     cursor: pointer;
     max-height: 60px;
     padding: 0 20px;
-
 }
 
 header figure {
@@ -276,16 +275,21 @@ figure {
 
 /* Styling af link i navigations bar */
 a.hjem {
-    color: var(--colorTwo);
+    color: var(--colorFour);
     text-decoration: none;
     cursor: pointer;
     transition: 0.25s;
+    display: flex;
+}
+
+a.hjem p {
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
 }
 
 a.hjem p:hover,
 a.hjem p:active {
     color: var(--colorThree);
-
 }
 
 /*------------------------------------*\

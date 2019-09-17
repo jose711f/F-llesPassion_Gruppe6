@@ -61,8 +61,7 @@
                 <p class="lang"></p>
                 <div class="ingrediens-liste">
                     <p class="fed">Ingredienser:</p>
-                    <p class="ingredienser">
-                    </p>
+                    <ul class="ingredienser"></ul>
 
                 </div>
                 <div class="fremgang">
@@ -120,16 +119,30 @@
         function vis() {
             console.log(vis);
 
-            retter.feed.entry.forEach((ret) => { // loop igennem json (personer)
+            retter.feed.entry.forEach((ret) => { // loop igennem json for at finde den ret man har klikket på
                 if (ret.gsx$id.$t == id) { // tjek hvilket github personen har og sammenlign med github
                     //
+
+                    const ingredienser = ret.gsx$ingredienser.$t;
+                    const ingrediensArray = ingredienser.split(",") //laver et Array af en streng (tekstlinje = tekststreg) - deler indholdet op i array elementer
 
                     document.querySelector("#detalje").style.display = "block";
                     document.querySelector("#detalje h2").textContent = ret.gsx$navn.$t;
                     document.querySelector("#detalje img").src = ret.gsx$billede.$t;
                     document.querySelector("#detalje img").alt = ret.gsx$navn.$t;
                     document.querySelector(".lang").textContent = ret.gsx$tekst.$t;
-                    document.querySelector(".ingredienser").textContent = `${ret.gsx$ingredienser.$t}`;
+                    const ingrediensListe = document.querySelector(".ingredienser");
+
+                    ingrediensArray.forEach(ingrediens => {
+                        console.log(ingrediens);
+                        const nyLi = document.createElement("li"); //nyt listeelement
+                        nyLi.textContent = ingrediens;
+                        ingrediensListe.appendChild(nyLi);
+
+                    })
+
+
+                    //document.querySelector(".ingredienser").textContent = `${ret.gsx$ingredienser.$t}`;
                     document.querySelector(".opskrift").textContent = `Opskrift: ${ret.gsx$opskrift.$t}`;
                     document.querySelector(".dato").textContent = ret.gsx$dato.$t;
                     document.querySelector(".byline").textContent = ret.gsx$forfatter.$t;
