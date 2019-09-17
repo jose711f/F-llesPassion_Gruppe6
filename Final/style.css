@@ -831,6 +831,7 @@ nav a {
     text-transform: uppercase;
     animation: anim 5s infinite;
     transition: 0.25s;
+    padding-bottom: 0px;
 }
 
 @keyframes anim {
