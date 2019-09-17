@@ -433,6 +433,12 @@ a.github_link {
 }
 */
 
+.h1logo {
+    width: 25vw;
+}
+
+/* styling af logo der sidder omkring overskriften på forsiden*/
+
 .sortering button {
     border-style: none;
     padding: 0 1rem;
@@ -769,7 +775,15 @@ p.lang {
     }
 }
 
+@media only screen and (min-width: 800px) {
+    h1 {
+        font-size: 5rem;
+    }
 
+    .h1logo {
+        width: 250px;
+    }
+}
 
 
 /*------------------------------------*\
@@ -803,7 +817,7 @@ nav a {
 
 .menukort-header {
     text-align: center;
-    margin: 5rem 1rem;
+    margin: 2rem 1rem;
 
 }
 
