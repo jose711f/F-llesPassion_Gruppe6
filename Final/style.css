@@ -398,10 +398,7 @@ a.github_link {
 }
 
 .top_link h4 {
-    font-family: 'recursive-subset', 'Recursive', sans-serif;
-    font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
-
-
+    font-family: 'kontrapunkt_mikiregular', sans-serif;
 }
 
 .top_link h4:hover {
@@ -751,6 +748,9 @@ p.lang {
         font-size: 1.5rem;
     }
 
+    .menukort-header h3 {
+        font-size: 1.2rem;
+    }
 }
 
 @media only screen and (min-width: 600px) {
