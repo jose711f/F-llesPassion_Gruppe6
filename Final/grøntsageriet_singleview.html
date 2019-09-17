@@ -19,6 +19,7 @@
             <a href="index.html" class="hjem">
                 <figure><img src="filer/lille_hvid.svg" alt="logo">
                 </figure>
+                <p>Grøntsageriet</p>
             </a>
         </div>
         <!--
@@ -136,7 +137,7 @@
 
                     //Hver ingrediens i arrayet laves om til listeelement som vises i ul
                     ingrediensArray.forEach(ingrediens => {
-                        console.log(ingrediens);
+                        //console.log(ingrediens);
                         const nyLi = document.createElement("li"); //laver et nyt listeelement inde i ul.
                         nyLi.textContent = ingrediens;
                         ingrediensListe.appendChild(nyLi); //appender alle ingredienserne i listen.

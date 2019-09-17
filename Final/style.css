@@ -538,13 +538,15 @@ article p {
 \*------------------------------------*/
 
 #detalje h3,
-#detalje article p {
+#detalje article p,
+#detalje article ul {
     padding: 0;
 }
 
 #detalje h2,
 #detalje h3,
-#detalje p {
+#detalje p,
+#detalje ul {
     padding: 0;
 }
 
@@ -553,10 +555,21 @@ article p {
 #detalje article p.opskrift {
     padding: 0px 0px 20px;
     font-family: 'kontrapunkt_mikiregular';
+    text-align: left;
 }
 
 #detalje article p.lang {
     font-family: 'kontrapunkt_mikibold';
+}
+
+#detalje article ul {
+    font-family: 'kontrapunkt_mikiregular';
+    margin-bottom: 1rem;
+}
+
+#detalje li {
+    list-style: none;
+    padding: 0.2rem 0;
 }
 
 #detalje article p.fed {
