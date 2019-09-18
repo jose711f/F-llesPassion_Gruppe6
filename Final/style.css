@@ -246,8 +246,9 @@ article p {
 
 .logo {
     cursor: pointer;
-    max-height: 60px;
+    height: 60px;
     padding: 0 20px;
+    /*    height: 100%;*/
 }
 
 header figure {
@@ -266,6 +267,31 @@ figure {
 }
 
 
+.nyt_logo {
+    /*    color: transparent;*/
+    display: inline-block;
+    background-image: url("filer/lille_sort.svg");
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
+
+    background-position: center;
+    background-size: contain;
+
+    filter: invert(100%) sepia(28%) saturate(0%) hue-rotate(68deg) brightness(113%) contrast(100%);
+    background-position: center;
+    background-size: contain;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+
+
+a.hjem:hover .nyt_logo,
+a.hjem:active .nyt_logo {
+    filter: invert(83%) sepia(21%) saturate(3309%) hue-rotate(325deg) brightness(100%) contrast(102%);
+}
 
 
 /* logo - slut */
@@ -278,6 +304,7 @@ a.hjem {
     cursor: pointer;
     transition: 0.25s;
     display: flex;
+    height: 100%;
 }
 
 a.hjem p {
@@ -285,8 +312,8 @@ a.hjem p {
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
 }
 
-a.hjem p:hover,
-a.hjem p:active {
+a.hjem:hover p,
+a.hjem:active p {
     color: var(--colorThree);
 }
 

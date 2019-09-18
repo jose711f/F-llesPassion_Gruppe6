@@ -76,8 +76,8 @@ function vis() {
             klon.querySelector(".profil-billede").src = ret.gsx$billede.$t;
             klon.querySelector("img").alt = ret.gsx$navn.$t;
             //                    klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
-            klon.querySelector(".tid").textContent = `Tid: ${ret.gsx$tid.$t}`;
-            klon.querySelector(".personer").textContent = `Antal Personer: ${ret.gsx$personer.$t}`;
+            klon.querySelector(".tid").textContent = `${ret.gsx$tid.$t}`;
+            klon.querySelector(".personer").textContent = `${ret.gsx$personer.$t} Personer`;
             klon.querySelector(".ret").addEventListener("click", () => {
 
                 location.href = `grøntsageriet_singleview.html?id=${ret.gsx$id.$t}`;
