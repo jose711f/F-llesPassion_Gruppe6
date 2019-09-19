@@ -422,12 +422,15 @@ a.github_link {
 }
 
 .top_link h4 {
-    font-family: 'kontrapunkt_mikiregular', sans-serif;
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
+    font-size: 3rem;
 }
 
 .top_link h4:hover {
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
     transform: translateY(-0.1rem);
+    color: var(--colorThree);
 
 }
 
@@ -558,6 +561,11 @@ article p {
 7.2 Single/"Detalje"
 \*------------------------------------*/
 
+#singleview {
+    background: var(--colorFour);
+}
+
+
 #detalje h3,
 #detalje article p,
 #detalje article ul {
@@ -641,7 +649,7 @@ p.lang {
     left: 0;
     /*    width: 100vw;*/
     /*    height: 100vh;*/
-    background-color: rgba(255, 255, 255, 0.5);
+    /*    background-color: rgba(255, 255, 255, 0.5);*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -734,6 +742,7 @@ p.lang {
 
 #detalje article {
     padding: 1rem 2rem;
+    background: white;
 
 }
 
@@ -756,6 +765,33 @@ p.lang {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.ikoner_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ikoner_top .tid_antal {
+    justify-content: space-around;
+}
+
+#detalje .printKnap {
+    background-image: url(filer/print-button2.svg);
+    display: inline-block;
+    padding: 12px;
+    margin: 1.2rem 1rem;
+    background-position: center;
+    background-size: contain;
+    height: 24px;
+    width: auto;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    filter: invert(25%) sepia(97%) saturate(822%) hue-rotate(139deg) brightness(99%) contrast(102%);
+}
+
+#detalje .printKnap:hover {
+    filter: invert(83%) sepia(21%) saturate(3309%) hue-rotate(325deg) brightness(100%) contrast(102%);
 }
 
 /*------------------------------------*\
