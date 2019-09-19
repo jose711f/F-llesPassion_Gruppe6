@@ -13,13 +13,27 @@
     </style>
 </head>
 
-<body>
+<body id="singleview">
     <header class="site_header">
+        <div class="logo">
+            <a href="index.html" class="hjem">
+                <!--
+                <figure><img src="filer/lille_hvid.svg" alt="logo">
+                </figure>
+-->
+                <div class="nyt_logo"></div>
+                <p>Grøntsageriet</p>
+            </a>
+        </div>
+
+        <!--
         <div class="topnav">
+
             <a href="index.html" class="hjem">
                 <p>Grøntsageriet</p>
             </a>
         </div>
+-->
     </header>
     <main>
         <section id="detalje">
@@ -30,35 +44,45 @@
                     <!--                    <div class="cirkel"><button class="luk">X</button></div>-->
                 </header>
                 <img src="" alt="">
-                <div class="tid_antal">
-                    <div class="antal">
-                        <i class="fa fa-users"></i>
-                        <i class="fa fa-user"></i>
-                        <i class="fa fa-user-o"></i>
-                        <p class="personer"></p>
+
+                <div class="ikoner_top">
+                    <div class="tid_antal">
+                        <div class="antal">
+                            <!--                        <i class="fa fa-users"></i>-->
+                            <i class="fa fa-user"></i>
+                            <!--                        <i class="fa fa-user-o"></i>-->
+                            <p class="personer"></p>
+                        </div>
+                        <div class="tilberedningstid">
+                            <i class="fa fa-clock-o"></i>
+                            <!--                        <i class='far fa-clock'></i>-->
+                            <p class="tid"></p>
+                        </div>
                     </div>
-                    <div class="tilberedningstid">
-                        <i class="fa fa-clock-o"></i>
-                        <i class='far fa-clock'></i>
-                        <p class="tid"></p>
+                    <div class="printKnap">
                     </div>
                 </div>
                 <div class="opskrift_data">
                     <p class="byline"></p>
                     <p class="dato"></p>
                 </div>
-
                 <p class="lang"></p>
-                <div class="ingrediens-liste">
-                    <p class="fed">Ingredienser:</p>
-                    <p class="ingredienser">
-                    </p>
+                <div class="wrapper">
+                    <div class="fremgang">
+                        <p class="fed">Fremgangsmåde:</p>
+                        <p class="opskrift"></p>
+                    </div>
+                    <div class="ingrediens-liste">
+                        <p class="fed">Ingredienser:</p>
+                        <ul class="ingredienser"></ul>
 
+                    </div>
                 </div>
-                <div class="fremgang">
-                    <p class="fed">Fremgangsmåde:</p>
-                    <p class="opskrift"></p>
-                </div>
+
+
+
+
+
             </article>
         </section>
     </main>
@@ -104,32 +128,51 @@
             console.log(loadData);
             const response = await fetch(url);
             retter = await response.json();
-            vis();
+            visOpskrift();
         }
         //funktion der viser personer i liste view
-        function vis() {
-            console.log(vis);
+        function visOpskrift() {
+            console.log(visOpskrift);
 
-            retter.feed.entry.forEach((ret) => { // loop igennem json (personer)
+            retter.feed.entry.forEach((ret) => { // loop igennem json for at finde den ret man har klikket på
                 if (ret.gsx$id.$t == id) { // tjek hvilket github personen har og sammenlign med github
                     //
+
+                    const ingredienser = ret.gsx$ingredienser.$t;
+                    const ingrediensArray = ingredienser.split("/") //laver et Array af en streng (tekstlinje = tekststreg) - deler indholdet op i array elementer
 
                     document.querySelector("#detalje").style.display = "block";
                     document.querySelector("#detalje h2").textContent = ret.gsx$navn.$t;
                     document.querySelector("#detalje img").src = ret.gsx$billede.$t;
                     document.querySelector("#detalje img").alt = ret.gsx$navn.$t;
                     document.querySelector(".lang").textContent = ret.gsx$tekst.$t;
-                    document.querySelector(".ingredienser").textContent = `${ret.gsx$ingredienser.$t}`;
+
+                    const ingrediensListe = document.querySelector(".ingredienser"); //Vælger ul fra html, hvor ingredienserne skal vises
+
+                    //Hver ingrediens i arrayet laves om til listeelement som vises i ul
+                    ingrediensArray.forEach(ingrediens => {
+                        //console.log(ingrediens);
+                        const nyLi = document.createElement("li"); //laver et nyt listeelement inde i ul.
+                        nyLi.textContent = ingrediens;
+                        ingrediensListe.appendChild(nyLi); //appender alle ingredienserne i listen.
+
+                    })
+
+
+                    //document.querySelector(".ingredienser").textContent = `${ret.gsx$ingredienser.$t}`;
                     document.querySelector(".opskrift").textContent = `Opskrift: ${ret.gsx$opskrift.$t}`;
                     document.querySelector(".dato").textContent = ret.gsx$dato.$t;
                     document.querySelector(".byline").textContent = ret.gsx$forfatter.$t;
                     document.querySelector(".tid").textContent = ret.gsx$tid.$t;
-                    document.querySelector("#detalje .personer").textContent = `Antal Personer: ${ret.gsx$personer.$t}`;
+                    document.querySelector("#detalje .personer").textContent = `${ret.gsx$personer.$t} Personer`;
                     document.querySelector(".opskrift").textContent = `${ret.gsx$opskrift.$t}`;
                     document.querySelector("#detalje h2").textContent = ret.gsx$navn.$t;
 
                 }
             })
         }
+
     </script>
-</body></html>
+</body>
+
+</html>

@@ -7,46 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <!--  Vi gør brug af ikoner fra Font Awesome - via W3schools.
+   Link: https://www.w3schools.com/icons/fontawesome_icons_intro.asp  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header class="site_header">
-<!--
         <div class="logo">
             <a href="index.html" class="hjem">
-                <figure><img src="filer/lille_hvid.svg" alt="logo">
-                </figure>
-            </a>
-        </div>
--->
-        <div class="logo">
-            <a href="index.html" class="nyt"></a>
-        </div>
-        <!--
-        <div class="topnav">
-
-            <a href="index.html" class="hjem">
+                <div class="nyt_logo"></div>
                 <p>Grøntsageriet</p>
             </a>
         </div>
--->
+        <!--
+        <div class="topnav">
+            <p>Opskrifter</p>
+            <p>Om os</p>
+            <p>Kontakt</p>
+        </div>
+        -->
     </header>
 
     <main>
         <header class="menukort-header">
+            <img class="h1logo" src="filer/blaagroen_top.svg" alt="logo top">
             <h1>Grøntsageriet</h1>
-            <h3>- Et vegansk mad univers</h3>
+            <img class="h1logo" src="filer/blaagroen_bund.svg" alt="logo bund">
+            <h3>- Et vegansk opskrift univers</h3>
         </header>
 
         <div class="menu">
             <nav>
-                <button class="filter valgt" data-ret="alle">Alle Retter</button>
+                <!--Filtreringsmenu-->
+                <button class="filter valgt" data-ret="alle">Alle Retter</button><!-- Hver knap har en data-attribut, som angiver den værdi vi filterer på-->
                 <button class="filter" data-ret="Forret">Forretter</button>
-                <button class="filter" data-ret="Aftensmad">Aftensmad</button>
+                <button class="filter" data-ret="Hovedret">Hovedretter</button> <!-- efter test, har vi ændret det fra aftensmad til hovedretter, da det passer bedre ind i den terminologi vi har brugt-->
                 <button class="filter" data-ret="Dessert">Desserter</button>
             </nav>
-
         </div>
 
         <div class="valgte_retter">
@@ -54,25 +52,28 @@
             <div class="dropdown">
                 <p class="dropbtn"> <span class="valgt_2">Sorter efter</span> <i class="fa fa-caret-down"></i></p>
                 <div class="sortering">
-                    <button data-sort="navn" class="sort">Navn</button>
+                    <!-- Sorteringsmenu-->
+                    <button data-sort="navn" class="sort">Navn</button><!-- Hver knap har en data-attribut, som angiver den værdi vi filterer på-->
                     <button data-sort="forfatter" class="sort">Forfatter</button>
                     <button data-sort="dato2" class="sort">Dato</button>
                 </div>
             </div>
         </div>
 
+        <!--Denne section er tom fordi at retterne her indlæses dynamisk-->
         <section id="menu-container" data-container></section>
 
         <div class="tilbage">
             <div class="top_link">
                 <a href="#">
-                    <h4>Tilbage til toppen <span class="up">&#8593;</span></h4>
+                    <h4><span class="up">&#8593;</span></h4>
                 </a>
             </div>
         </div>
     </main>
     <footer>
         <div class="social_links">
+            <!-- Ikoner fra Font Awesome-->
             <i class="fa fa-facebook"></i>
             <i class="fa fa-instagram"></i>
             <i class="fa fa-youtube-play"></i>
@@ -87,6 +88,7 @@
         <article class="ret">
             <img src="" alt="" class="profil-billede">
             <h3 class="navn"></h3>
+            <p class="forfatter"></p>
             <div class="tid_antal">
                 <div class="antal">
                     <!--                        <i class="fa fa-users"></i>-->

@@ -32,10 +32,6 @@ INDHOLDSFORTEGNELSE:
     --colorFour: rgb(244, 242, 239);
     --colorFive: #E7F5F1;
     --colorSix: #1a1a1a;
-
-
-    /*Grønne farve - tidligere anvendt*/
-    --colorNine: rgb(0, 132, 137);
 }
 
 
@@ -133,6 +129,7 @@ img {
 
 }
 
+
 @font-face {
     font-family: "Recursive";
     font-weight: 300 900;
@@ -149,9 +146,9 @@ img {
 
 h1 {
     font-family: 'recursive-subset', 'Recursive', sans-serif;
+    /*    Her instiller vi vores vores variable font. I dette tilfælde indstiller vi eksempelvis font-weight til 800 ved at skrive "wght"800 */
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
     color: var(--colorTwo);
-    font-weight: 800;
     font-size: 2.5rem;
 
 }
@@ -202,8 +199,6 @@ h3 {
 
 h4 {
     font-family: 'kontrapunkt_mikiregular';
-
-
 }
 
 
@@ -250,7 +245,7 @@ article p {
     cursor: pointer;
     height: 60px;
     padding: 0 20px;
-
+    /*    height: 100%;*/
 }
 
 header figure {
@@ -270,27 +265,28 @@ figure {
 
 
 .nyt_logo {
-    /*    color: transparent;*/
-    display: inline-block;
+    /*SVG-filen er indsat som background-image. Det gør det muligt at skifte farve på filen*/
     background-image: url("filer/lille_sort.svg");
-    padding: 7.5px;
-    width: 45px;
-    height: 45px;
-    margin: auto;
+    display: inline-block;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
     background-position: center;
     background-size: contain;
-
+    /*Vi bruger filter til at vælge hvid som farve*/
     filter: invert(100%) sepia(28%) saturate(0%) hue-rotate(68deg) brightness(113%) contrast(100%);
     background-position: center;
     background-size: contain;
+    height: 100%;
     background-repeat: no-repeat;
 }
 
-.nyt_logo:hover {
+a.hjem:hover .nyt_logo,
+a.hjem:active .nyt_logo {
+    /*SVG-filen skifter vores gule farve ved hover*/
     filter: invert(83%) sepia(21%) saturate(3309%) hue-rotate(325deg) brightness(100%) contrast(102%);
 }
-
-
 
 
 /* logo - slut */
@@ -298,16 +294,22 @@ figure {
 
 /* Styling af link i navigations bar */
 a.hjem {
-    color: var(--colorTwo);
+    color: var(--colorFour);
     text-decoration: none;
     cursor: pointer;
     transition: 0.25s;
+    display: flex;
+    height: 100%;
 }
 
-a.hjem p:hover,
-a.hjem p:active {
-    color: var(--colorThree);
+a.hjem p {
+    font-family: 'recursive-subset', 'Recursive', sans-serif;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
+}
 
+a.hjem:hover p,
+a.hjem:active p {
+    color: var(--colorThree);
 }
 
 /*------------------------------------*\
@@ -422,13 +424,14 @@ a.github_link {
 .top_link h4 {
     font-family: 'recursive-subset', 'Recursive', sans-serif;
     font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
-
-
+    font-size: 3rem;
+    transition: all 0.25s ease 0s;
 }
 
 .top_link h4:hover {
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
     transform: translateY(-0.1rem);
+    color: var(--colorThree);
 
 }
 
@@ -458,6 +461,12 @@ a.github_link {
 }
 */
 
+.h1logo {
+    width: 25vw;
+}
+
+/* styling af logo der sidder omkring overskriften på forsiden*/
+
 .sortering button {
     border-style: none;
     padding: 0 1rem;
@@ -468,7 +477,6 @@ a.github_link {
 .sortering button:hover {
     color: var(--colorThree);
 }
-
 
 .dropdown {
     height: 100%;
@@ -500,11 +508,8 @@ a.github_link {
     display: block;
 }
 
-.dropdown:hover .sortering {
-    display: block;
-}
-
 .sortering {
+    /*Sortering er skjult*/
     display: none;
     position: absolute;
     background-color: var(--colorTwo);
@@ -512,6 +517,11 @@ a.github_link {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     margin: 2rem 1rem;
+}
+
+.dropdown:hover .sortering {
+    /*  Sorterings muligheder åbner ved hover*/
+    display: block;
 }
 
 .sort {
@@ -527,6 +537,11 @@ a.github_link {
 
 .valgte_retter {
     margin-top: 4rem;
+}
+
+article p {
+    padding: 0px;
+    text-align: center;
 }
 
 #inddeling {
@@ -547,14 +562,21 @@ a.github_link {
 7.2 Single/"Detalje"
 \*------------------------------------*/
 
+#singleview {
+    background: var(--colorFour);
+}
+
+
 #detalje h3,
-#detalje article p {
+#detalje article p,
+#detalje article ul {
     padding: 0;
 }
 
 #detalje h2,
 #detalje h3,
-#detalje p {
+#detalje p,
+#detalje ul {
     padding: 0;
 }
 
@@ -563,15 +585,27 @@ a.github_link {
 #detalje article p.opskrift {
     padding: 0px 0px 20px;
     font-family: 'kontrapunkt_mikiregular';
+    text-align: left;
 }
 
 #detalje article p.lang {
     font-family: 'kontrapunkt_mikibold';
 }
 
+#detalje article ul {
+    font-family: 'kontrapunkt_mikiregular';
+    margin-bottom: 1rem;
+}
+
+#detalje li {
+    list-style: none;
+    padding: 0.2rem 0;
+}
+
 #detalje article p.fed {
     font-family: 'kontrapunkt_mikibold';
     color: var(--colorTwo);
+    text-align: left;
 }
 
 #detalje article p.byline {
@@ -616,7 +650,7 @@ p.lang {
     left: 0;
     /*    width: 100vw;*/
     /*    height: 100vh;*/
-    background-color: rgba(255, 255, 255, 0.5);
+    /*    background-color: rgba(255, 255, 255, 0.5);*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -625,18 +659,10 @@ p.lang {
     padding: 3rem;
 }
 
-/*
-#detalje .cirkel {
-    border-radius: 100%;
-    margin: 10px;
-    background-color: var(--colorTwo);
-    width: 2.5rem;
-    height: 2.5rem;
-}
-*/
-
 #detalje button {
-    color: var(--colorFour);
+    color: var(--colorOne);
+    border: none;
+    background-color: var(--colorFour);
 }
 
 
@@ -708,7 +734,6 @@ p.lang {
     padding-bottom: 1rem;
 }
 
-
 #menu-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -718,6 +743,7 @@ p.lang {
 
 #detalje article {
     padding: 1rem 2rem;
+    background: white;
 
 }
 
@@ -736,10 +762,67 @@ p.lang {
 }
 
 
+
+
+.ikoner_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ikoner_top .tid_antal {
+    justify-content: space-around;
+}
+
+#detalje .printKnap {
+    background-image: url(filer/print-button2.svg);
+    display: inline-block;
+    padding: 12px;
+    margin: 1.2rem 1rem;
+    background-position: center;
+    background-size: contain;
+    height: 24px;
+    width: auto;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    filter: invert(25%) sepia(97%) saturate(822%) hue-rotate(139deg) brightness(99%) contrast(102%);
+}
+
+#detalje .printKnap:hover {
+    filter: invert(83%) sepia(21%) saturate(3309%) hue-rotate(325deg) brightness(100%) contrast(102%);
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
 .single-content .fremgang {
+    flex-grow: 2;
+    flex-basis: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+
+}
+
+.ingrediens-liste {
+    flex-grow: 1;
+    flex-basis: 100px;
+    background-color: var(--colorFive);
+    padding: 1rem;
+    font-size: 0.8rem;
+
+}
+
+#detalje li {
+    list-style: none;
+    padding: 0.25rem 0;
+}
+
+.lang,
+.opskrift {
+    max-width: 95%;
 }
 
 /*------------------------------------*\
@@ -773,6 +856,9 @@ p.lang {
         font-size: 1.5rem;
     }
 
+    .menukort-header h3 {
+        font-size: 1.2rem;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -791,7 +877,15 @@ p.lang {
     }
 }
 
+@media only screen and (min-width: 800px) {
+    h1 {
+        font-size: 5rem;
+    }
 
+    .h1logo {
+        width: 250px;
+    }
+}
 
 
 /*------------------------------------*\
@@ -825,7 +919,7 @@ nav a {
 
 .menukort-header {
     text-align: center;
-    margin: 5rem 1rem;
+    margin: 2rem 1rem;
 
 }
 
@@ -839,6 +933,7 @@ nav a {
     text-transform: uppercase;
     animation: anim 5s infinite;
     transition: 0.25s;
+    padding-bottom: 0px;
 }
 
 @keyframes anim {
@@ -865,10 +960,8 @@ nav a {
     color: var(--colorThree);
 }
 
-
-
-
 #menu-container {
+    /* Vi opsætter den dynamiske liste med opskrifter med CSS Grid*/
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
