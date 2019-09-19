@@ -32,10 +32,6 @@ INDHOLDSFORTEGNELSE:
     --colorFour: rgb(244, 242, 239);
     --colorFive: #E7F5F1;
     --colorSix: #1a1a1a;
-
-
-    /*Grønne farve - tidligere anvendt*/
-    --colorNine: rgb(0, 132, 137);
 }
 
 
@@ -133,6 +129,7 @@ img {
 
 }
 
+
 @font-face {
     font-family: "Recursive";
     font-weight: 300 900;
@@ -149,9 +146,9 @@ img {
 
 h1 {
     font-family: 'recursive-subset', 'Recursive', sans-serif;
+    /*    Her instiller vi vores vores variable font. I dette tilfælde indstiller vi eksempelvis font-weight til 800 ved at skrive "wght"800 */
     font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"-15, "ital"0;
     color: var(--colorTwo);
-    font-weight: 800;
     font-size: 2.5rem;
 
 }
@@ -268,17 +265,16 @@ figure {
 
 
 .nyt_logo {
-    /*    color: transparent;*/
-    display: inline-block;
+    /*SVG-filen er indsat som background-image. Det gør det muligt at skifte farve på filen*/
     background-image: url("filer/lille_sort.svg");
+    display: inline-block;
     padding: 10px;
     width: 40px;
     height: 40px;
     margin: auto 0;
-
     background-position: center;
     background-size: contain;
-
+    /*Vi bruger filter til at vælge hvid som farve*/
     filter: invert(100%) sepia(28%) saturate(0%) hue-rotate(68deg) brightness(113%) contrast(100%);
     background-position: center;
     background-size: contain;
@@ -286,10 +282,9 @@ figure {
     background-repeat: no-repeat;
 }
 
-
-
 a.hjem:hover .nyt_logo,
 a.hjem:active .nyt_logo {
+    /*SVG-filen skifter vores gule farve ved hover*/
     filter: invert(83%) sepia(21%) saturate(3309%) hue-rotate(325deg) brightness(100%) contrast(102%);
 }
 
@@ -509,11 +504,8 @@ a.github_link {
     display: block;
 }
 
-.dropdown:hover .sortering {
-    display: block;
-}
-
 .sortering {
+    /*Sortering er skjult*/
     display: none;
     position: absolute;
     background-color: var(--colorTwo);
@@ -521,6 +513,11 @@ a.github_link {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     margin: 2rem 1rem;
+}
+
+.dropdown:hover .sortering {
+    /*  Sorterings muligheder åbner ved hover*/
+    display: block;
 }
 
 .sort {
@@ -653,16 +650,6 @@ p.lang {
     padding: 3rem;
 }
 
-/*
-#detalje .cirkel {
-    border-radius: 100%;
-    margin: 10px;
-    background-color: var(--colorTwo);
-    width: 2.5rem;
-    height: 2.5rem;
-}
-*/
-
 #detalje button {
     color: var(--colorOne);
     border: none;
@@ -737,7 +724,6 @@ p.lang {
     align-items: baseline;
     padding-bottom: 1rem;
 }
-
 
 #menu-container {
     display: grid;
@@ -907,10 +893,8 @@ nav a {
     color: var(--colorThree);
 }
 
-
-
-
 #menu-container {
+    /* Vi opsætter den dynamiske liste med opskrifter med CSS Grid*/
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
