@@ -423,8 +423,9 @@ a.github_link {
 
 .top_link h4 {
     font-family: 'recursive-subset', 'Recursive', sans-serif;
-    font-variation-settings: "PROP"0, "XPRN"1, "wght"800, "slnt"0, "ital"0;
+    font-variation-settings: "PROP"0, "XPRN"1, "wght"600, "slnt"0, "ital"0;
     font-size: 3rem;
+    transition: all 0.25s ease 0s;
 }
 
 .top_link h4:hover {
